@@ -156,7 +156,7 @@
         \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
         \LenToUnit{\paperheight-1.0 cm}
     ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{Last updated in January 2025}\hspace{\widthof{Last updated in September 2024}}
+        \small\color{gray}\textit{Last updated in June 2025}\hspace{\widthof{Last updated in September 2024}}
     }}}%
   }%
 }%
@@ -215,7 +215,7 @@
 
         
         \begin{onecolentry}
-             Passionate about Kubernetes, E2E automation, Linux and event streaming solutions. Demonstrated experience working DevOps roles in a fintech company with strict SLAs. Have a knack for developer velocity and scale. Supported and developed multiple production grade systems for low latency and high-throughput critical financial data operations.  
+             Passionate about Kubernetes, E2E automation, Linux and event streaming solutions. Demonstrated experience working DevOps roles in a fin-tech company with strict SLAs. Have a knack for developer velocity and scale. Supported and developed multiple production grade systems for low latency and high-throughput critical financial data operations.  
         \end{onecolentry}
 
         \vspace{0.2 cm}
@@ -228,7 +228,7 @@
         \begin{highlightsforbulletentries}
         \item \href{https://www.credly.com/badges/c264ae0a-ba9f-4829-bbae-875b86e59835/public_url}{CKAD} - Certified Kubernetes Application Developer - Linux Foundation
         \item \href{https://learning.codefresh.io/certificate_v2/6717cb8a8582d739a104d5ac/user/66fccbfec243c0fba00e90d2}{GitOps Enterprise } - GitOps certification level 3 for Argo - Codefresh
-        \item \href{https://certificate.codingninjas.com/verify/e56b8910f7382c3e}{System design} - Coding Ninjas
+        \item \href{https://certificate.codingninjas.com/verify/e56b8910f7382c3e}{System design} - HLD and LLD - Coding Ninjas
         \end{highlightsforbulletentries}
     \end{onecolentry}
 
@@ -238,7 +238,7 @@
             Sept 2020 – Sept 2024
         }
             \textbf{KIIT University}, Information Technology \begin{highlights}
-                \item CGPA: 9.2/10 (\href{https://drive.google.com/drive/folders/1xd91zvwPYuIICKTGaXkDtYB620dXf8zI}{engineering semester mark-sheets})
+                \item CGPA: \textbf{9.2}/10 (\href{https://drive.google.com/drive/folders/1xd91zvwPYuIICKTGaXkDtYB620dXf8zI}{engineering semester mark-sheets})
                 \item Coursework: Algorithm Design, Computer Networking, OS, DBMS and ML
             \end{highlights}
         \end{threecolentry}
@@ -251,12 +251,13 @@
             
         July 2024 - Present
         }
-            \href{https://www.fico.com/en}{\textbf{FICO}}, Cloud Engineer Associate\newline
+            \href{https://www.fico.com/en}{\textbf{FICO}}, \textbf{Cloud Engineer 1}\newline
             \textit{Global Platform Capabilities, Event Streaming}
             \begin{highlights}
                 \item Automated deployment and patching of multiple production-grade \textbf{StreamNative Pulsar} clusters using nested \textbf{Helm charts}, \textbf{GitHub shared workflows}, \textbf{Kustomize}, \textbf{ArgoCD} and \textbf{Istio}
                 \item Implemented \textbf{autoscaling} for Pulsar broker and bookkeeper pods using \textbf{HPA}, \textbf{KEDA} and \textbf{prometheus} custom metrics
                 \item \textbf{On-call support}, operations, performance optimizations and monitoring improvements for production \textbf{Apache Kafka} clusters using \textbf{ELK stack}, \textbf{Grafana}, \textbf{AWS EC2, route53} and \textbf{JVM tuning}
+                \item \textbf{Promoted} to Cloud Engineer 1 from Cloud Engineer Associate in June 2025
             \end{highlights}
         \end{twocolentry}
         \vspace{0.2 cm}
@@ -265,21 +266,30 @@
             
         June 2023 – June 2024
         }
-            \href{https://www.fico.com/en}{\textbf{FICO}}, Cloud Engineer Intern\newline
+            \href{https://www.fico.com/en}{\textbf{FICO}}, \textbf{Cloud Engineer Intern}\newline
             \textit{Global Platform Capabilities, AWS infrastructure}
             \begin{highlights}
                 \item Developed enterprise wide \textbf{AWS} account life-cycle management automation using \textbf{Terraform}, \textbf{Boto3}, \textbf{Python3} and Jenkins
                 \item Participated in \textbf{CSA STAR level 2} and \textbf{PCI} attestation audit - cloud infrastructure
-                \item Responsible for enhancements, automations, maintenance and \textbf{on-call support} for enterprise-wide \textbf{Route53} records, \textbf{IAM} policies and \textbf{AWS organization} components
+                \item Responsible for enhancements, automation, maintenance and \textbf{on-call support} for enterprise-wide \textbf{Route53} records, \textbf{IAM} policies and \textbf{AWS organization} components
             \end{highlights}
         \end{twocolentry}
     
-    \section{Projects and Hobbies}
-        \begin{highlights}
+    \section{Projects}
+        \begin{itemize}
             \item Multiple \textbf{spot awards} throughout my tenure at FICO \textit{akin to performance incentives}
-            \item Daily drive Fedora linux on my personal workstation for fun
-            \item Pulsar visualizer to provide telemetry data for all topics in a cluster built using \textbf{Streamlit}, \textbf{Python3} and \textbf{FastAPI}          
-        \end{highlights}
+            \item \href{https://github.com/om22shree/airflow-transaction-analyzer}{\textbf{Batch transaction processor}} - provides a robust solution for processing and analyzing large volumes of batch transactions. 
+            \begin{description}
+                \item[Technologies used -] Uses \textbf{Apache Airflow} for orchestration, PostgreSQL for storage, \textbf{FastAPI} for API endpoints \& \textbf{ELK} stack
+                \item[Achievements -] Processed over 1 million transactions in a single batch through optimized \textbf{DAGs and parallel task execution}
+            \end{description}
+            \item \href{https://github.com/yourusername/kubernetes-dapr-webhook}{\textbf{Kubernetes MWC for DAPR sidecar injection basis namespace specific configurations}} - automatically injects DAPR sidecars into applications based on environment-specific configurations and keeps a track of injected sidecars and their configuration
+            \begin{description}
+                \item[Technologies used -] Kubernetes, \textbf{DAPR, Go}, Helm
+            \end{description}   
+            \item \href{https://omshree.space}{\textbf{Personal website}} - Built using Streamlit and python | Get to know me
+        \end{itemize}
+            
 
         
 \end{document}
