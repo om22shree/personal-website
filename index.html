@@ -239,6 +239,41 @@
             gap: 2rem;
         }
 
+        /* Certifications (match skills grid) */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .cert-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 200px;
+        }
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .cert-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .cert-issuer, .cert-date {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
         .skill-card {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
@@ -740,6 +775,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certs</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
@@ -749,6 +785,7 @@
                 <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
                 <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
                 <li><a href="#experience" onclick="closeMobileMenu()">Experience</a></li>
+                <li><a href="#certifications" onclick="closeMobileMenu()">Certs</a></li>
                 <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
             </ul>
         </div>
@@ -839,6 +876,29 @@
             </div>
         </section>
 
+        <!-- Certifications Section -->
+        <section id="certifications" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certifications-grid">
+                    <a class="cert-card" href="https://drive.google.com/file/d/1CPOyj62NOxnrrQZU_v4yiGys19axoQy1/view?usp=sharing" target="_blank" rel="noopener">
+                        <div class="cert-icon">🐳</div>
+                        <h3>Certified Kubernetes Application Developer</h3>
+                        <div class="cert-issuer">Linux Foundation</div>                        
+                    </a>
+                    <a class="cert-card" href="https://drive.google.com/file/d/1xYUl29T33hiiTlCn3NweUJexgNTz63t8/view?usp=sharing" target="_blank" rel="noopener">
+                        <div class="cert-icon">🏗️</div>
+                        <h3>GitOps Eneterprise - level 3</h3>
+                        <div class="cert-issuer">Codefresh</div>
+                    </a>
+                    <a class="cert-card" href="https://drive.google.com/file/d/1p1UdL-VumeSRWCxczI5E7-l4oeySCXLx/view?usp=sharing" target="_blank" rel="noopener">
+                        <div class="cert-icon">☁️</div>
+                        <h3>System Design</h3>
+                        <div class="cert-issuer">CodingNinjas</div>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <section id="skills" class="fade-in">
             <div class="container">
