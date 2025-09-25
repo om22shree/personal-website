@@ -24,3 +24,23 @@
 ## The solution
 
 ![architecture design diagram](assets/dns_mesh.svg)
+
+## Lets talk implementation
+
+The idea is quite simple and relies on the underlying AWS magic that allows you to manage private hosted zones without setting up explicit DNS delegations.
+
+### _route53 delegation magic_
+
+When you create a private hosted zone, the following name servers are used: -
+
+- ns-0.awsdns-00.com
+- ns-512.awsdns-00.net
+- ns-1024.awsdns-00.org
+- ns-1536.awsdns-00.co.uk
+
+These name servers are used because the DNS protocol requires that every hosted zone must have an NS record set. These name servers are reserved and never used by Route 53 public hosted zones. You can only query those zones via Route 53 Resolver in a VPC that has been associated to the hosted zone by using an inbound endpoint connected to the VPCs specified in the private hosted zone
+
+Because all the private hosted zones have the same set of nameservers, setting up delegation would be pointless, you'd be delegating to the same set of servers across all zones. On top of this, your current zone already has these entries running as active servers, effectively, delegation is already set-up whenever you create a new private zone.
+
+### _how to setup i/o between different private hosted zones_
+
