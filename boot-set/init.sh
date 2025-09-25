@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Personal Setup Script
-# Installs: Git, Docker, Go, Python tools (in venv), Minikube, kubectl, Neovim
+# Installs: Git, Docker, Go, Python tools (in venv), Minikube, kubectl, Neovim, VSCode (deb)
 
 set -e  # Exit on error
 
@@ -74,6 +74,12 @@ python3 -m venv ~/.local/share/python-dev-tools-venv
 if ! grep -q ".local/share/python-dev-tools-venv/bin" ~/.bashrc; then
     echo 'export PATH=$PATH:$HOME/.local/share/python-dev-tools-venv/bin' >> ~/.bashrc
 fi
+
+# Install VSCode (deb package, not snap)
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+sudo apt update
+sudo apt install -y code
 
 # Install Minikube and kubectl
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
