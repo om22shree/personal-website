@@ -28,6 +28,7 @@
             --border: #300000;
             --glow: rgba(139, 0, 0, 0.6);
             --purple-accent: #4a0033; /* Dark WH40K purple */
+            --red-accent: #8b0000;
         }
         body {
             font-family: 'Space Mono', monospace;
@@ -236,25 +237,36 @@
             left: 50%;
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 0 0 15px var(--accent);
         }
         .disk-1 {
-            width: 220px;
-            height: 220px;
-            border: 2px solid rgba(139, 0, 0, 0.7);
-            animation: rotate 12s linear infinite;
+            width: 350px;
+            height: 350px;
+            border: 3px solid transparent;
+            border-top: 3px solid var(--purple-accent);
+            border-right: 3px solid rgba(139, 92, 246, 0.4);
+            border-bottom: 3px solid transparent;
+            border-left: 3px solid rgba(139, 92, 246, 0.7);
+            animation: rotate 10s linear infinite;
         }
         .disk-2 {
-            width: 260px;
-            height: 260px;
-            border: 1.5px solid rgba(74, 0, 51, 0.6);
-            animation: rotate 18s linear infinite reverse;
+            width: 280px;
+            height: 280px;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--accent);
+            border-right: 2px solid transparent;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.6);
+            border-left: 2px solid rgba(0, 212, 255, 0.3);
+            animation: rotate 14s linear infinite reverse;
         }
         .disk-3 {
-            width: 300px;
-            height: 300px;
-            border: 1px solid rgba(139, 0, 0, 0.4);
-            animation: rotate 24s linear infinite;
+            width: 220px;
+            height: 220px;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--red-accent);
+            border-right: 2px solid rgba(239, 68, 68, 0.5);
+            border-bottom: 2px solid transparent;
+            border-left: 2px solid rgba(239, 68, 68, 0.8);
+            animation: rotate 8s linear infinite;
         }
         .event-horizon {
             position: absolute;
@@ -389,7 +401,7 @@
             background: rgba(139, 0, 0, 0.2);
             color: var(--accent-hover);
         }
-        /* Timeline */
+        /* Timeline - BLOOD STAIN */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -400,10 +412,26 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--purple-accent), var(--accent), var(--red-accent));
-            border-radius: 2px;
-            box-shadow: 0 0 10px var(--glow);
+            width: 8px; /* Thicker */
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 12px,
+                    rgba(139, 0, 0, 0.25) 12px,
+                    rgba(139, 0, 0, 0.25) 24px
+                ),
+                linear-gradient(
+                    to bottom,
+                    var(--red-accent),
+                    var(--accent),
+                    var(--purple-accent)
+                );
+            border-radius: 3px;
+            box-shadow: 
+                0 0 15px rgba(139, 0, 0, 0.8),
+                inset 0 0 10px rgba(0, 0, 0, 0.6);
+            opacity: 0.95;
         }
         .timeline-item {
             position: relative;
@@ -572,9 +600,9 @@
                 width: 300px;
                 height: 300px;
             }
-            .disk-1 { width: 180px; height: 180px; }
-            .disk-2 { width: 220px; height: 220px; }
-            .disk-3 { width: 260px; height: 260px; }
+            .disk-1 { width: 300px; height: 300px; }
+            .disk-2 { width: 240px; height: 240px; }
+            .disk-3 { width: 190px; height: 190px; }
             .hero-text h1 {
                 font-size: 2.5rem;
             }
@@ -614,6 +642,9 @@
             .timeline-item::before {
                 left: -2rem;
             }
+            .timeline::before {
+                width: 6px;
+            }
         }
         @media (max-width: 480px) {
             .hero-text h1 {
@@ -626,9 +657,12 @@
                 width: 250px;
                 height: 250px;
             }
-            .disk-1 { width: 150px; height: 150px; }
-            .disk-2 { width: 190px; height: 190px; }
-            .disk-3 { width: 230px; height: 230px; }
+            .disk-1 { width: 250px; height: 250px; }
+            .disk-2 { width: 200px; height: 200px; }
+            .disk-3 { width: 160px; height: 160px; }
+            .timeline::before {
+                width: 5px;
+            }
         }
         .fade-in {
             opacity: 0;
@@ -684,7 +718,7 @@
                     <div class="hero-text">
                         <h1>Om Shree</h1>
                         <div class="subtitle">Cloud Platform Engineer</div>
-                        <p>Architect of resilient cloud systems. I forge infrastructure that scales without fear—where event streaming flows like the Warp and observability pierces the veil of chaos.</p>
+                        <p>Forging scalable cloud infrastructure, commanding event streams, and ensuring absolute container observability</p>
                         <div class="cta-buttons">
                             <a href="#" class="btn btn-primary" onclick="downloadResume()">
                                 📜 Download Codex
@@ -846,7 +880,7 @@
             <div class="container">
                 <h2 class="section-title">Primarch’s Legacy</h2>
                 <p style="text-align: center; max-width: 750px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8;">
-                    <strong>Warhammer 40,000</strong> is a dystopian sci-fi universe where humanity teeters on the brink of extinction in a galaxy consumed by war, chaos, and faith. Amidst this eternal night, the <strong>Space Marines</strong> stand as paragons of discipline, honor, and unwavering loyalty to the Imperium of Man. As a lifelong fan, I draw inspiration from their creed: <em>“Courage and honor. Duty and sacrifice.”</em> Their relentless pursuit of order in a chaotic cosmos mirrors my own approach to engineering: precision, resilience, and uncompromising standards.
+                    <strong>Warhammer 40K</strong> is a dystopian sci-fi universe where humanity teeters on the brink of extinction in a galaxy consumed by war, chaos, and faith. Amidst this eternal night, the <strong>Space Marines</strong> stand as paragons of discipline, honor, and unwavering loyalty to the Imperium of Man. As a lifelong fan, I draw inspiration from their creed: <em>“Courage and honor. Duty and sacrifice.”</em> Their relentless pursuit of order in a chaotic cosmos mirrors my own approach to engineering: precision, resilience, and uncompromising standards.
                 </p>
             </div>
         </section>
@@ -1026,10 +1060,9 @@
         const style = document.createElement('style');
         style.textContent = infallKeyframes;
         document.head.appendChild(style);
-        // Start particle stream
         // Start particle stream — denser and more frequent
         for (let i = 0; i < 12; i++) {
-            setTimeout(() => createInfallingParticles(), i * 300); // spawn every 300ms instead of 500ms
+            setTimeout(() => createInfallingParticles(), i * 300);
         }
         // Mouse interaction for Warp Rift
         const warpRiftContainer = document.querySelector('.warp-rift-container');
