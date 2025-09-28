@@ -97,7 +97,7 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-        /* Hero Section with Warp Rift */
+        /* Hero Section with Enhanced Warp Rift */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -193,7 +193,7 @@
             color: var(--accent-hover);
             box-shadow: 0 0 15px var(--glow);
         }
-        /* Warp Rift */
+        /* Enhanced Warp Rift (Black Hole) */
         .hero-visual {
             display: flex;
             justify-content: center;
@@ -207,118 +207,92 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transform-style: preserve-3d;
+            perspective: 800px;
         }
         .warp-rift {
+            position: relative;
             width: 200px;
             height: 200px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, 
-                transparent 20%, 
-                rgba(139, 0, 0, 0.9) 30%, 
-                rgba(74, 0, 51, 0.7) 50%, 
-                #000000 70%);
-            position: relative;
-            animation: pulseRift 4s ease-in-out infinite;
-            box-shadow: 
-                0 0 50px rgba(139, 0, 0, 0.7),
-                0 0 100px rgba(74, 0, 51, 0.5),
-                inset 0 0 50px rgba(0, 0, 0, 0.9);
+            transform-style: preserve-3d;
         }
-        .accretion-disk {
+        .singularity {
             position: absolute;
-            width: 350px;
-            height: 350px;
-            border: 3px solid transparent;
-            border-top: 3px solid rgba(139, 0, 0, 0.8);
-            border-right: 3px solid rgba(74, 0, 51, 0.7);
-            border-bottom: 3px solid rgba(139, 0, 0, 0.5);
-            border-left: 3px solid rgba(139, 0, 0, 0.8);
-            border-radius: 50%;
-            animation: rotate 10s linear infinite;
             top: 50%;
             left: 50%;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #000, transparent 70%);
+            border-radius: 50%;
             transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 
+                0 0 30px rgba(139, 0, 0, 0.8),
+                inset 0 0 20px #000;
         }
-        .accretion-disk::before {
-            content: '';
+        .disk {
             position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px var(--accent);
+        }
+        .disk-1 {
+            width: 220px;
+            height: 220px;
+            border: 2px solid rgba(139, 0, 0, 0.7);
+            animation: rotate 12s linear infinite;
+        }
+        .disk-2 {
+            width: 260px;
+            height: 260px;
+            border: 1.5px solid rgba(74, 0, 51, 0.6);
+            animation: rotate 18s linear infinite reverse;
+        }
+        .disk-3 {
             width: 300px;
             height: 300px;
-            border: 2px solid transparent;
-            border-top: 2px solid rgba(74, 0, 51, 0.7);
-            border-right: 2px solid rgba(139, 0, 0, 0.5);
-            border-bottom: 2px solid rgba(139, 0, 0, 0.7);
-            border-left: 2px solid rgba(74, 0, 51, 0.6);
-            border-radius: 50%;
+            border: 1px solid rgba(139, 0, 0, 0.4);
+            animation: rotate 24s linear infinite;
+        }
+        .event-horizon {
+            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            animation: rotate 14s linear infinite reverse;
-        }
-        .accretion-disk::after {
-            content: '';
-            position: absolute;
-            width: 250px;
-            height: 250px;
-            border: 1px solid transparent;
-            border-top: 1px solid rgba(139, 0, 0, 0.8);
-            border-right: 1px solid rgba(74, 0, 51, 0.5);
-            border-bottom: 1px solid rgba(139, 0, 0, 0.5);
-            border-left: 1px solid rgba(139, 0, 0, 0.7);
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            top: 50%;
-            left: 50%;
             transform: translate(-50%, -50%);
-            animation: rotate 18s linear infinite;
+            box-shadow: 
+                0 0 40px rgba(139, 0, 0, 0.9),
+                0 0 80px rgba(74, 0, 51, 0.6);
+            z-index: 5;
+            animation: pulseRift 5s ease-in-out infinite alternate;
         }
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--accent);
-            border-radius: 50%;
-            animation: spiralRift 6s linear infinite;
-            box-shadow: 0 0 4px var(--accent);
-        }
-        .particle:nth-child(1) { animation-delay: 0s; top: 10%; left: 50%; }
-        .particle:nth-child(2) { animation-delay: 1s; top: 30%; left: 20%; }
-        .particle:nth-child(3) { animation-delay: 2s; top: 70%; left: 80%; }
-        .particle:nth-child(4) { animation-delay: 3s; top: 80%; left: 30%; }
-        .particle:nth-child(5) { animation-delay: 4s; top: 20%; left: 70%; }
         @keyframes rotate {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
             to { transform: translate(-50%, -50%) rotate(360deg); }
         }
         @keyframes pulseRift {
-            0%, 100% { 
-                transform: scale(1);
-                box-shadow: 
-                    0 0 50px rgba(139, 0, 0, 0.7),
-                    0 0 100px rgba(74, 0, 51, 0.5),
-                    inset 0 0 50px rgba(0, 0, 0, 0.9);
-            }
-            50% { 
-                transform: scale(1.05);
-                box-shadow: 
-                    0 0 70px rgba(139, 0, 0, 0.9),
-                    0 0 140px rgba(74, 0, 51, 0.7),
-                    inset 0 0 70px rgba(0, 0, 0, 0.95);
-            }
+            0% { opacity: 0.8; }
+            100% { opacity: 1; box-shadow: 0 0 60px rgba(139, 0, 0, 1), 0 0 100px rgba(74, 0, 51, 0.8); }
         }
-        @keyframes spiralRift {
-            from {
-                transform: rotate(0deg) translateX(150px) rotate(0deg);
-                opacity: 1;
-            }
-            to {
-                transform: rotate(360deg) translateX(50px) rotate(-360deg);
-                opacity: 0;
-            }
+        .infalling-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 6px var(--accent);
         }
         /* Sections */
         section {
@@ -598,14 +572,9 @@
                 width: 300px;
                 height: 300px;
             }
-            .warp-rift {
-                width: 150px;
-                height: 150px;
-            }
-            .accretion-disk {
-                width: 250px;
-                height: 250px;
-            }
+            .disk-1 { width: 180px; height: 180px; }
+            .disk-2 { width: 220px; height: 220px; }
+            .disk-3 { width: 260px; height: 260px; }
             .hero-text h1 {
                 font-size: 2.5rem;
             }
@@ -657,14 +626,9 @@
                 width: 250px;
                 height: 250px;
             }
-            .warp-rift {
-                width: 120px;
-                height: 120px;
-            }
-            .accretion-disk {
-                width: 200px;
-                height: 200px;
-            }
+            .disk-1 { width: 150px; height: 150px; }
+            .disk-2 { width: 190px; height: 190px; }
+            .disk-3 { width: 230px; height: 230px; }
         }
         .fade-in {
             opacity: 0;
@@ -730,15 +694,14 @@
                     </div>
                     <div class="hero-visual">
                         <div class="warp-rift-container">
-                            <div class="warp-rift"></div>
-                            <div class="accretion-disk"></div>
-                            <div class="particles">
-                                <div class="particle"></div>
-                                <div class="particle"></div>
-                                <div class="particle"></div>
-                                <div class="particle"></div>
-                                <div class="particle"></div>
+                            <div class="warp-rift">
+                                <div class="singularity"></div>
+                                <div class="disk disk-1"></div>
+                                <div class="disk disk-2"></div>
+                                <div class="disk disk-3"></div>
+                                <div class="event-horizon"></div>
                             </div>
+                            <div class="infalling-particles" id="particles"></div>
                         </div>
                     </div>
                 </div>
@@ -860,7 +823,7 @@
                 <div class="contact-content">
                     <div class="contact-info">
                         <h3>Forge an alliance?</h3>
-                        <p>I stand ready to serve the Imperium or the Sith Eternal. Speak only if your cause is worthy of damnation or glory.</p>
+                        <p>I stand ready to serve the Imperium Eternal. Speak only if your cause is worthy of damnation or glory.</p>
                     </div>
                     <div class="contact-links">
                         <a href="mailto:om22shree@gmail.com" class="contact-link">
@@ -883,7 +846,7 @@
             <div class="container">
                 <h2 class="section-title">Primarch’s Legacy</h2>
                 <p style="text-align: center; max-width: 750px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8;">
-                    <strong>Warhammer 40K</strong> is a dystopian sci-fi universe where humanity teeters on the brink of extinction in a galaxy consumed by war, chaos, and faith. Amidst this eternal night, the <strong>Ultramarines</strong>—genetically enhanced super-soldiers known as Space Marines—stand as paragons of discipline, honor, and unwavering loyalty to the Imperium of Man. As a lifelong fan, I draw inspiration from their creed: <em>“Courage and honor. Duty and sacrifice.”</em> Their relentless pursuit of order in a chaotic cosmos mirrors my own approach to engineering: precision, resilience, and uncompromising standards.
+                    <strong>Warhammer 40,000</strong> is a dystopian sci-fi universe where humanity teeters on the brink of extinction in a galaxy consumed by war, chaos, and faith. Amidst this eternal night, the <strong>Space Marines</strong> stand as paragons of discipline, honor, and unwavering loyalty to the Imperium of Man. As a lifelong fan, I draw inspiration from their creed: <em>“Courage and honor. Duty and sacrifice.”</em> Their relentless pursuit of order in a chaotic cosmos mirrors my own approach to engineering: precision, resilience, and uncompromising standards.
                 </p>
             </div>
         </section>
@@ -891,7 +854,7 @@
     <footer>
         <div class="container">
             <p style="text-align: center; color: var(--text-secondary); display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin: 0;">
-                💀 &copy; 2025 Om Shree — Ultramarine
+                💀 &copy; 2025 Om Shree — ULTRAMAR — Will of Titus
             </p>
         </div>
     </footer>
@@ -1020,48 +983,55 @@
                 }
             });
         });
-        function createFloatingParticles() {
-            const hero = document.querySelector('.hero');
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.style.cssText = `
-                    position: absolute;
-                    width: 2px;
-                    height: 2px;
-                    background: rgba(139, 0, 0, 0.6);
-                    border-radius: 50%;
-                    pointer-events: none;
-                    animation: float ${5 + Math.random() * 10}s linear infinite;
-                    left: ${Math.random() * 100}%;
-                    top: ${Math.random() * 100}%;
-                    animation-delay: ${Math.random() * 5}s;
-                `;
-                hero.appendChild(particle);
-            }
+        // Enhanced Warp Rift Particles
+        function createInfallingParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const angle = Math.random() * Math.PI * 2;
+            const radius = 200 + Math.random() * 100;
+            const startX = 200 + Math.cos(angle) * radius;
+            const startY = 200 + Math.sin(angle) * radius;
+            
+            particle.style.left = `${startX}px`;
+            particle.style.top = `${startY}px`;
+            particle.style.setProperty('--startX', startX + 'px');
+            particle.style.setProperty('--startY', startY + 'px');
+            
+            const duration = 2 + Math.random() * 2.5; // ~2–4.5s (faster fall)
+            particle.style.animation = `infall ${duration}s linear forwards`;
+            
+            container.appendChild(particle);
+            
+            particle.addEventListener('animationend', () => {
+                particle.remove();
+                setTimeout(createInfallingParticles, 300);
+            });
         }
-        const floatKeyframes = `
-            @keyframes float {
+        const infallKeyframes = `
+            @keyframes infall {
                 0% {
-                    transform: translateY(100vh) rotate(0deg);
-                    opacity: 0;
-                }
-                10% {
                     opacity: 1;
-                }
-                90% {
-                    opacity: 1;
+                    transform: translate(0, 0) scale(1);
                 }
                 100% {
-                    transform: translateY(-100vh) rotate(360deg);
                     opacity: 0;
+                    transform: translate(calc(200px - var(--startX, 200px)), calc(200px - var(--startY, 200px))) scale(0.2);
                 }
             }
         `;
         const style = document.createElement('style');
-        style.textContent = floatKeyframes;
+        style.textContent = infallKeyframes;
         document.head.appendChild(style);
-        createFloatingParticles();
-        const warpRift = document.querySelector('.warp-rift');
+        // Start particle stream
+        // Start particle stream — denser and more frequent
+        for (let i = 0; i < 12; i++) {
+            setTimeout(() => createInfallingParticles(), i * 300); // spawn every 300ms instead of 500ms
+        }
+        // Mouse interaction for Warp Rift
         const warpRiftContainer = document.querySelector('.warp-rift-container');
         if (warpRiftContainer) {
             warpRiftContainer.addEventListener('mousemove', (e) => {
@@ -1072,10 +1042,10 @@
                 const mouseY = e.clientY - centerY;
                 const rotateX = (mouseY / rect.height) * 10;
                 const rotateY = (mouseX / rect.width) * -10;
-                warpRift.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                document.querySelector('.warp-rift').style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
             warpRiftContainer.addEventListener('mouseleave', () => {
-                warpRift.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                document.querySelector('.warp-rift').style.transform = 'rotateX(0deg) rotateY(0deg)';
             });
         }
     </script>
