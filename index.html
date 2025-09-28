@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Shree - Cloud Platform</title>
     <meta name="description" content="Cloud Platform Engineer | Scalable Infrastructure | Event Streaming | Observability | Ultramarine of the Imperium">
-    
     <!-- Monospace Font: Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
     <style>
         * {
             margin: 0;
@@ -299,12 +297,41 @@
         }
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 5px;
+            height: 5px;
             background: var(--accent);
             border-radius: 50%;
-            opacity: 0;
-            box-shadow: 0 0 6px var(--accent);
+            opacity: 1;
+            box-shadow: 0 0 8px var(--accent), 0 0 16px var(--accent);
+            animation: infall 3s linear forwards;
+        }
+        /* TRAIL EFFECT */
+        .particle::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.7;
+            filter: blur(2px);
+            animation: trailFade 3s linear forwards;
+        }
+        @keyframes infall {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(calc(var(--dx, 0px)), calc(var(--dy, 0px))) scale(0.1);
+                opacity: 0;
+            }
+        }
+        @keyframes trailFade {
+            0% { opacity: 0.7; }
+            100% { opacity: 0; }
         }
         /* Sections */
         section {
@@ -412,7 +439,7 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 8px; /* Thicker */
+            width: 8px;
             background: 
                 repeating-linear-gradient(
                     0deg,
@@ -892,7 +919,6 @@
             </p>
         </div>
     </footer>
-
     <script>
         // Mobile menu functions
         function toggleMobileMenu() {
@@ -1017,53 +1043,52 @@
                 }
             });
         });
-        // Enhanced Warp Rift Particles
-        function createInfallingParticles() {
+        // HEAVY PARTICLES WITH TRAILS
+        function createHeavyTrailingParticles() {
             const container = document.getElementById('particles');
             if (!container) return;
-            
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            
-            const angle = Math.random() * Math.PI * 2;
-            const radius = 200 + Math.random() * 100;
-            const startX = 200 + Math.cos(angle) * radius;
-            const startY = 200 + Math.sin(angle) * radius;
-            
-            particle.style.left = `${startX}px`;
-            particle.style.top = `${startY}px`;
-            particle.style.setProperty('--startX', startX + 'px');
-            particle.style.setProperty('--startY', startY + 'px');
-            
-            const duration = 2 + Math.random() * 2.5; // ~2–4.5s (faster fall)
-            particle.style.animation = `infall ${duration}s linear forwards`;
-            
-            container.appendChild(particle);
-            
-            particle.addEventListener('animationend', () => {
-                particle.remove();
-                setTimeout(createInfallingParticles, 300);
-            });
-        }
-        const infallKeyframes = `
-            @keyframes infall {
-                0% {
-                    opacity: 1;
-                    transform: translate(0, 0) scale(1);
-                }
-                100% {
-                    opacity: 0;
-                    transform: translate(calc(200px - var(--startX, 200px)), calc(200px - var(--startY, 200px))) scale(0.2);
-                }
+
+            // Create 15 particles
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+
+                    // Random start position around the container
+                    const angle = Math.random() * Math.PI * 2;
+                    const radius = 180 + Math.random() * 120;
+                    const startX = 200 + Math.cos(angle) * radius;
+                    const startY = 200 + Math.sin(angle) * radius;
+
+                    // Destination = center (200,200)
+                    const dx = 200 - startX;
+                    const dy = 200 - startY;
+
+                    particle.style.left = `${startX}px`;
+                    particle.style.top = `${startY}px`;
+                    particle.style.setProperty('--dx', `${dx}px`);
+                    particle.style.setProperty('--dy', `${dy}px`);
+
+                    container.appendChild(particle);
+
+                    // Remove after animation
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.remove();
+                        }
+                    }, 3100);
+
+                    // Recreate after delay for continuous stream
+                    setTimeout(createHeavyTrailingParticles, 800);
+                }, i * 200);
             }
-        `;
-        const style = document.createElement('style');
-        style.textContent = infallKeyframes;
-        document.head.appendChild(style);
-        // Start particle stream — denser and more frequent
-        for (let i = 0; i < 12; i++) {
-            setTimeout(() => createInfallingParticles(), i * 300);
         }
+
+        // Start particle stream
+        document.addEventListener('DOMContentLoaded', () => {
+            createHeavyTrailingParticles();
+        });
+
         // Mouse interaction for Warp Rift
         const warpRiftContainer = document.querySelector('.warp-rift-container');
         if (warpRiftContainer) {
