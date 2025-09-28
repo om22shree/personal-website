@@ -96,7 +96,7 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-        /* Hero Section with Enhanced Warp Rift */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -192,7 +192,7 @@
             color: var(--accent-hover);
             box-shadow: 0 0 15px var(--glow);
         }
-        /* Enhanced Warp Rift (Black Hole) */
+        /* Enhanced Warp Rift */
         .hero-visual {
             display: flex;
             justify-content: center;
@@ -301,11 +301,10 @@
             height: 5px;
             background: var(--accent);
             border-radius: 50%;
-            opacity: 1;
-            box-shadow: 0 0 8px var(--accent), 0 0 16px var(--accent);
-            animation: infall 3s linear forwards;
+            opacity: 0.9;
+            box-shadow: 0 0 6px var(--accent);
+            animation: infall 4s cubic-bezier(0.2, 0, 0.8, 1) forwards;
         }
-        /* TRAIL EFFECT */
         .particle::after {
             content: '';
             position: absolute;
@@ -315,22 +314,21 @@
             height: 100%;
             background: var(--accent);
             border-radius: 50%;
-            opacity: 0.7;
-            filter: blur(2px);
-            animation: trailFade 3s linear forwards;
+            opacity: 0.6;
+            animation: trailFade 4s ease-out forwards;
         }
         @keyframes infall {
             0% {
                 transform: translate(0, 0) scale(1);
-                opacity: 1;
+                opacity: 0.9;
             }
             100% {
-                transform: translate(calc(var(--dx, 0px)), calc(var(--dy, 0px))) scale(0.1);
+                transform: translate(var(--dx, 0px), var(--dy, 0px)) scale(0.1);
                 opacity: 0;
             }
         }
         @keyframes trailFade {
-            0% { opacity: 0.7; }
+            0% { opacity: 0.6; }
             100% { opacity: 0; }
         }
         /* Sections */
@@ -920,7 +918,7 @@
         </div>
     </footer>
     <script>
-        // Mobile menu functions
+        // Mobile menu
         function toggleMobileMenu() {
             const mobileNav = document.getElementById('mobileNav');
             const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -951,6 +949,8 @@
                 closeMobileMenu();
             }
         });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -966,20 +966,18 @@
                 }
             });
         });
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+
+        // Fade-in on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, observerOptions);
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Resume download
         async function downloadResume() {
             const button = event.target;
             const originalText = button.innerHTML;
@@ -992,9 +990,7 @@
                 button.disabled = true;
                 const githubUrl = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPOSITORY_NAME}/${BRANCH}/${RESUME_FILE_PATH}`;
                 const response = await fetch(githubUrl);
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch codex: ${response.status} ${response.statusText}`);
-                }
+                if (!response.ok) throw new Error(`Failed: ${response.status}`);
                 const blob = await response.blob();
                 const url = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
@@ -1013,83 +1009,58 @@
                     button.disabled = false;
                 }, 2000);
             } catch (error) {
-                console.error('Error forging codex:', error);
                 button.innerHTML = '❌ Codex Lost to Warp';
                 button.style.background = '#8b0000';
-                const fallbackUrl = `https://github.com/${GITHUB_USERNAME}/${REPOSITORY_NAME}/blob/${BRANCH}/${RESUME_FILE_PATH}`;
                 setTimeout(() => {
-                    if (confirm('Codex lost to the Warp. View on GitHub?')) {
-                        window.open(fallbackUrl, '_blank');
-                    }
                     button.innerHTML = originalText;
                     button.style.background = '';
                     button.disabled = false;
                 }, 3000);
             }
         }
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section[id]');
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        // HEAVY PARTICLES WITH TRAILS
-        function createHeavyTrailingParticles() {
+
+        // Optimized particle system — max 5 particles, no hang
+        let particleCount = 0;
+        const MAX_PARTICLES = 5;
+
+        function spawnParticle() {
+            if (particleCount >= MAX_PARTICLES) return;
             const container = document.getElementById('particles');
             if (!container) return;
 
-            // Create 15 particles
-            for (let i = 0; i < 15; i++) {
-                setTimeout(() => {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
+            particleCount++;
+            const particle = document.createElement('div');
+            particle.className = 'particle';
 
-                    // Random start position around the container
-                    const angle = Math.random() * Math.PI * 2;
-                    const radius = 180 + Math.random() * 120;
-                    const startX = 200 + Math.cos(angle) * radius;
-                    const startY = 200 + Math.sin(angle) * radius;
+            const angle = Math.random() * Math.PI * 2;
+            const radius = 180 + Math.random() * 100;
+            const startX = 200 + Math.cos(angle) * radius;
+            const startY = 200 + Math.sin(angle) * radius;
+            const dx = 200 - startX;
+            const dy = 200 - startY;
 
-                    // Destination = center (200,200)
-                    const dx = 200 - startX;
-                    const dy = 200 - startY;
+            particle.style.left = `${startX}px`;
+            particle.style.top = `${startY}px`;
+            particle.style.setProperty('--dx', `${dx}px`);
+            particle.style.setProperty('--dy', `${dy}px`);
 
-                    particle.style.left = `${startX}px`;
-                    particle.style.top = `${startY}px`;
-                    particle.style.setProperty('--dx', `${dx}px`);
-                    particle.style.setProperty('--dy', `${dy}px`);
+            container.appendChild(particle);
 
-                    container.appendChild(particle);
-
-                    // Remove after animation
-                    setTimeout(() => {
-                        if (particle.parentNode) {
-                            particle.remove();
-                        }
-                    }, 3100);
-
-                    // Recreate after delay for continuous stream
-                    setTimeout(createHeavyTrailingParticles, 800);
-                }, i * 200);
-            }
+            setTimeout(() => {
+                if (particle.parentNode) particle.remove();
+                particleCount--;
+                setTimeout(spawnParticle, 1000 + Math.random() * 500);
+            }, 4100);
         }
 
-        // Start particle stream
+        // Start gentle stream
         document.addEventListener('DOMContentLoaded', () => {
-            createHeavyTrailingParticles();
+            for (let i = 0; i < 3; i++) {
+                setTimeout(spawnParticle, i * 800);
+            }
         });
 
-        // Mouse interaction for Warp Rift
+        // Mouse interaction
         const warpRiftContainer = document.querySelector('.warp-rift-container');
         if (warpRiftContainer) {
             warpRiftContainer.addEventListener('mousemove', (e) => {
