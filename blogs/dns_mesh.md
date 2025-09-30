@@ -90,8 +90,7 @@ Now that you know how to create region scpecific PHZs, the natural evolution is 
 - Resolver inbound and outbound endpoints are region specific : either you replicate the IPs in resolver rules from different regions or somehow allow the IPs to communicate cross-region
 - VPCs are region specific, because our PHZs are hosted on top of VPCs - we have inheritted this constraint
 
-_This suddenly sounds complicated ... an IP mess_
-_solution is mess --> mesh_
+_*This suddenly sounds complicated ... an IP mess ... solution is mess --> mesh*_
 
 PHZs must have inheritted VPC scoped regional constraints, this is not true ... PHZs are still very a much a global Route53 service
 
@@ -101,7 +100,7 @@ _But how do I reach these VPCs cross-region ... wouldn't that require a region s
 You are bang-on-the-money ... the idea is to create resolver rules for all of your PHZs in all regions, not just the one region where host VPC resides, but ALL regions. To do this, you need inbound and outbound IPs in all regions ... does that ring a bell ? ... you already have these endpoints in all regions ... simply reuse them.
 Because all DNS VPCs are associated to all PHZs, once you are in any region's VPC you will have access to all PHZs ... so it doesn't matter if you hit IPs from EU or US ... you'll end up having the best of both worlds ... in my case, this was 12 regions and roughly 50 PHZs
 
-### What about Security ?###
+### What about Security ?
 
 Here's all you need: -
 
