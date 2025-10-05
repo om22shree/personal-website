@@ -73,6 +73,8 @@ But here's the kicker: **observability platforms are expensive**. We needed a co
 
 ### The Cost-Optimized Observability Stack
 
+![Observability flow diagram](./assets/PulsarObs.png)
+
 We built our observability around three core components: **Prometheus for metrics, OpenTelemetry for instrumentation, and Cribl for intelligent data routing to Splunk**. This architecture keeps our licensing costs manageable while giving us operational insights we never had with Kafka.
 
 **Prometheus as the Metrics Foundation**
