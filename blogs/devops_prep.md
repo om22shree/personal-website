@@ -54,3 +54,7 @@
 - [Redis deep dive](https://www.hellointerview.com/learn/system-design/deep-dives/redis)
 - [System Design deep dive -- this is a never-ending pursuit](https://www.designgurus.io/courses)
 - [SQL cheat-sheet](https://www.datacamp.com/cheat-sheet/postgre-sql-basics-cheat-sheet)
+
+### Cloud & Terraform
+- [AWS design framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+- [Terraform architecture](https://spacelift.io/blog/terraform-architecture)
