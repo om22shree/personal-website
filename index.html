@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om Shree - Cloud Platform</title>
-    <meta name="description" content="Cloud Platform Engineer | Scalable Infrastructure | Event Streaming | Observability | Ultramarine of the Imperium">
+    <title>Om Shree - Cloud Platform Engineer</title>
+    <meta name="description" content="Cloud Platform Engineer specializing in large-scale distributed systems, event streaming architectures, and Kubernetes infrastructure automation">
     <!-- Monospace Font: Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,11 +21,11 @@
             --bg-tertiary: #120000;
             --text-primary: #e0e0e0;
             --text-secondary: #888;
-            --accent: #8b0000; /* Sith blood red */
+            --accent: #8b0000;
             --accent-hover: #ff0a0a;
             --border: #300000;
             --glow: rgba(139, 0, 0, 0.6);
-            --purple-accent: #4a0033; /* Dark WH40K purple */
+            --purple-accent: #4a0033;
             --red-accent: #8b0000;
         }
         body {
@@ -192,14 +192,14 @@
             color: var(--accent-hover);
             box-shadow: 0 0 15px var(--glow);
         }
-        /* Enhanced Warp Rift */
+        /* Enhanced Data Visualization */
         .hero-visual {
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
         }
-        .warp-rift-container {
+        .data-viz-container {
             position: relative;
             width: 400px;
             height: 400px;
@@ -209,13 +209,13 @@
             transform-style: preserve-3d;
             perspective: 800px;
         }
-        .warp-rift {
+        .data-viz {
             position: relative;
             width: 200px;
             height: 200px;
             transform-style: preserve-3d;
         }
-        .singularity {
+        .core {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -229,14 +229,14 @@
                 0 0 30px rgba(139, 0, 0, 0.8),
                 inset 0 0 20px #000;
         }
-        .disk {
+        .ring {
             position: absolute;
             top: 50%;
             left: 50%;
             border-radius: 50%;
             transform: translate(-50%, -50%);
         }
-        .disk-1 {
+        .ring-1 {
             width: 350px;
             height: 350px;
             border: 3px solid transparent;
@@ -246,7 +246,7 @@
             border-left: 3px solid rgba(139, 92, 246, 0.7);
             animation: rotate 10s linear infinite;
         }
-        .disk-2 {
+        .ring-2 {
             width: 280px;
             height: 280px;
             border: 2px solid transparent;
@@ -256,7 +256,7 @@
             border-left: 2px solid rgba(0, 212, 255, 0.3);
             animation: rotate 14s linear infinite reverse;
         }
-        .disk-3 {
+        .ring-3 {
             width: 220px;
             height: 220px;
             border: 2px solid transparent;
@@ -287,7 +287,7 @@
             0% { opacity: 0.8; }
             100% { opacity: 1; box-shadow: 0 0 60px rgba(139, 0, 0, 1), 0 0 100px rgba(74, 0, 51, 0.8); }
         }
-        .infalling-particles {
+        .data-particles {
             position: absolute;
             top: 0;
             left: 0;
@@ -365,68 +365,7 @@
             color: var(--accent);
             font-size: 1.4rem;
         }
-        /* Skills & Certs */
-        .skills-grid, .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .skill-card, .cert-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            color: var(--text-primary);
-            text-decoration: none !important;
-        }
-        .skill-card:hover, .cert-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
-        }
-        .cert-card h3,
-        .cert-card .cert-issuer {
-            transition: color 0.3s ease;
-        }
-        .cert-card:hover h3,
-        .cert-card:hover .cert-issuer {
-            color: var(--accent-hover) !important;
-        }
-        .skill-icon, .cert-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-            text-shadow: 0 0 10px var(--glow);
-        }
-        .skill-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        .tag {
-            background: rgba(20, 0, 0, 0.3);
-            color: var(--text-secondary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 3px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(139, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        .tag:hover {
-            background: rgba(139, 0, 0, 0.2);
-            color: var(--accent-hover);
-        }
-        /* Timeline - BLOOD STAIN */
+        /* Enhanced Experience Section */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -486,11 +425,23 @@
             0%, 100% { text-shadow: 0 0 8px var(--glow); }
             50% { text-shadow: 0 0 15px rgba(139, 0, 0, 0.9); }
         }
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
         .timeline-date {
             color: var(--accent);
             font-weight: 600;
             font-size: 0.9rem;
             text-shadow: 0 0 5px var(--glow);
+            background: rgba(139, 0, 0, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid rgba(139, 0, 0, 0.3);
         }
         .timeline-title {
             font-size: 1.5rem;
@@ -500,6 +451,238 @@
         .timeline-company {
             color: var(--text-secondary);
             margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .timeline-location {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .timeline-location::before {
+            content: '📍';
+        }
+        .timeline-content {
+            margin-top: 1.5rem;
+        }
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .timeline-content li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .timeline-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .achievement-highlight {
+            background: rgba(139, 0, 0, 0.1);
+            border-left: 3px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .achievement-highlight strong {
+            color: var(--accent-hover);
+        }
+        /* Blogs Section */
+        .blogs-container {
+            position: relative;
+            overflow: hidden;
+            margin: 0 -2rem;
+            padding: 0 2rem;
+        }
+        .blogs-scroll {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 1rem 0 2rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) var(--bg-secondary);
+        }
+        .blogs-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        .blogs-scroll::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+            border-radius: 4px;
+        }
+        .blogs-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, var(--accent), var(--purple-accent));
+            border-radius: 4px;
+        }
+        .blog-card {
+            flex: 0 0 calc(33.333% - 1.333rem);
+            min-width: 280px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            scroll-snap-align: start;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 180px;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
+        }
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--purple-accent));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .blog-card:hover::before {
+            transform: scaleX(1);
+        }
+        .blog-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            text-shadow: 0 0 10px var(--glow);
+        }
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        .blog-card:hover .blog-title {
+            color: var(--accent-hover);
+        }
+        .blog-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .blog-nav-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Space Mono', monospace;
+            font-weight: 600;
+        }
+        .blog-nav-btn:hover {
+            background: var(--accent);
+            color: #000;
+            border-color: var(--accent);
+            box-shadow: 0 0 15px var(--glow);
+        }
+        .blog-nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--border);
+            border-top: 3px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Skills & Certs */
+        .skills-grid, .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .skill-card, .cert-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            color: var(--text-primary);
+            text-decoration: none !important;
+        }
+        .skill-card:hover, .cert-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
+        }
+        .cert-card h3,
+        .cert-card .cert-issuer {
+            transition: color 0.3s ease;
+        }
+        .cert-card:hover h3,
+        .cert-card:hover .cert-issuer {
+            color: var(--accent-hover) !important;
+        }
+        .skill-icon, .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            text-shadow: 0 0 10px var(--glow);
+        }
+        .skill-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .tag {
+            background: rgba(20, 0, 0, 0.3);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .tag:hover {
+            background: rgba(139, 0, 0, 0.2);
+            color: var(--accent-hover);
         }
         /* Contact */
         .contact-content {
@@ -536,9 +719,63 @@
             border-color: rgba(139, 0, 0, 0.3);
             transform: translateX(8px);
         }
-        /* WH40K Section */
-        #wh40k {
+        /* Projects Section */
+        #projects {
             background: var(--bg-tertiary);
+        }
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 0 auto;
+            max-width: 800px;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(139, 0, 0, 0.2);
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .project-header h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+        }
+        .project-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            background: rgba(139, 0, 0, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid rgba(139, 0, 0, 0.3);
+        }
+        .project-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .project-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .project-link:hover {
+            color: var(--accent-hover);
+            text-shadow: 0 0 8px var(--glow);
         }
         /* Footer */
         footer {
@@ -621,13 +858,13 @@
             .hero-visual {
                 order: 2;
             }
-            .warp-rift-container {
+            .data-viz-container {
                 width: 300px;
                 height: 300px;
             }
-            .disk-1 { width: 300px; height: 300px; }
-            .disk-2 { width: 240px; height: 240px; }
-            .disk-3 { width: 190px; height: 190px; }
+            .ring-1 { width: 300px; height: 300px; }
+            .ring-2 { width: 240px; height: 240px; }
+            .ring-3 { width: 190px; height: 190px; }
             .hero-text h1 {
                 font-size: 2.5rem;
             }
@@ -647,6 +884,14 @@
             }
             section {
                 padding: 3rem 0;
+            }
+            .blogs-container {
+                margin: 0 -1rem;
+                padding: 0 1rem;
+            }
+            .blog-card {
+                flex: 0 0 calc(100% - 2rem);
+                min-width: 280px;
             }
             .skills-grid, .certifications-grid {
                 grid-template-columns: 1fr;
@@ -678,15 +923,21 @@
             .section-title {
                 font-size: 1.75rem;
             }
-            .warp-rift-container {
+            .data-viz-container {
                 width: 250px;
                 height: 250px;
             }
-            .disk-1 { width: 250px; height: 250px; }
-            .disk-2 { width: 200px; height: 200px; }
-            .disk-3 { width: 160px; height: 160px; }
+            .ring-1 { width: 250px; height: 250px; }
+            .ring-2 { width: 200px; height: 200px; }
+            .ring-3 { width: 160px; height: 160px; }
             .timeline::before {
                 width: 5px;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .blog-card {
+                flex: 0 0 calc(50% - 1rem);
+                min-width: 280px;
             }
         }
         .fade-in {
@@ -718,21 +969,25 @@
         <nav>
             <div class="logo">OS</div>
             <ul class="nav-links">
-                <li><a href="#home">Sanctum</a></li>
-                <li><a href="#experience">Crusades</a></li>
-                <li><a href="#skills">Arsenal</a></li>
-                <li><a href="#certifications">Seals</a></li>
-                <li><a href="#contact">Heresy</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </nav>
         <div class="mobile-nav" id="mobileNav">
             <ul>
-                <li><a href="#home" onclick="closeMobileMenu()">Sanctum</a></li>
-                <li><a href="#skills" onclick="closeMobileMenu()">Arsenal</a></li>
-                <li><a href="#experience" onclick="closeMobileMenu()">Crusades</a></li>
-                <li><a href="#certifications" onclick="closeMobileMenu()">Seals</a></li>
-                <li><a href="#contact" onclick="closeMobileMenu()">Heresy</a></li>
+                <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+                <li><a href="#experience" onclick="closeMobileMenu()">Experience</a></li>
+                <li><a href="#blogs" onclick="closeMobileMenu()">Blogs</a></li>
+                <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
+                <li><a href="#certifications" onclick="closeMobileMenu()">Certifications</a></li>
+                <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -743,24 +998,24 @@
                     <div class="hero-text">
                         <h1>Om Shree</h1>
                         <div class="subtitle">Cloud Platform Engineer</div>
-                        <p>Forging scalable cloud infrastructure, commanding event streams, and ensuring absolute container observability</p>
+                        <p>Specializing in large-scale distributed systems, event streaming architectures, and Kubernetes infrastructure automation with a proven track record in production environments.</p>
                         <div class="cta-buttons">
                             <a href="#" class="btn btn-primary" onclick="downloadResume()">
-                                📜 Download Codex
+                                📄 Download Resume
                             </a>
-                            <a href="#contact" class="btn btn-secondary">Submit Your Will</a>
+                            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                         </div>
                     </div>
                     <div class="hero-visual">
-                        <div class="warp-rift-container">
-                            <div class="warp-rift">
-                                <div class="singularity"></div>
-                                <div class="disk disk-1"></div>
-                                <div class="disk disk-2"></div>
-                                <div class="disk disk-3"></div>
+                        <div class="data-viz-container">
+                            <div class="data-viz">
+                                <div class="core"></div>
+                                <div class="ring ring-1"></div>
+                                <div class="ring ring-2"></div>
+                                <div class="ring ring-3"></div>
                                 <div class="event-horizon"></div>
                             </div>
-                            <div class="infalling-particles" id="particles"></div>
+                            <div class="data-particles" id="particles"></div>
                         </div>
                     </div>
                 </div>
@@ -768,59 +1023,104 @@
         </section>
         <section id="experience" class="fade-in">
             <div class="container">
-                <h2 class="section-title">Crusades of Service</h2>
+                <h2 class="section-title">Professional Experience</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">June 2025 - Present</div>
-                        <h3 class="timeline-title">Cloud Engineer 1</h3>
-                        <div class="timeline-company">FICO</div>
-                        <ul>
-                            <li>Implemented core DNS infrastructure using Route53, used by every component and service deployed at FICO</li>
-                            <li>Automated lifecycle management of apex domain, subdomains and hosted zones using lambda functions</li>
-                            <li>Implemented forward and reverse DNS capabilities for North-South and East-West connections</li>
-                            <li>24/7 On-Call support for Route53, Pulsar, DAPR and Kafka services across the org</li>
-                        </ul> 
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Cloud Engineer 1</h3>
+                                <div class="timeline-company">FICO</div>
+                                <div class="timeline-location">Bangalore, IN</div>
+                            </div>
+                            <div class="timeline-date">July 2025 - Present</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Developed distributed DNS mesh architecture across multiple AWS accounts and regions, utilizing Terraform to configure numerous Route 53 hosted zones and VPC connections for cell-based architecture.</li>
+                                <li>Provided 12/7 on-call support for production Pulsar, Kafka, Route53, and DAPR services; improved MTTR by training L1 support teams and establishing an escalation hierarchy.</li>
+                                <li>Participated in SRE and PRE incident response calls alongside staff engineers, architects and VP-level executives.</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-date">July 2024 - May 2025</div>
-                        <h3 class="timeline-title">Cloud Engineer Associate</h3>
-                        <div class="timeline-company">FICO</div>
-                        <ul>
-                            <li>Deployed Pulsar clusters using helm, ArgoCD, GitOps and Kubernetes serving multiple production applications across FICO</li>
-                            <li>Implemented monitoring for all these clusters using OpenTelemetry, Prometheus and ELK stack</li>
-                            <li>Deployed and managed multi-cluster DAPR API abstraction layer across the org</li>
-                            <li>Responsible for performance tuning and lifecycle management of production kafka clusters across FICO</li>
-                        </ul> 
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Cloud Engineer Associate</h3>
+                                <div class="timeline-company">FICO</div>
+                                <div class="timeline-location">Bangalore, IN</div>
+                            </div>
+                            <div class="timeline-date">July 2024 - June 2025</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="achievement-highlight">
+                                <strong>Key Achievement:</strong> Optimized 10+ Kafka clusters to maintain 99.99% availability, 200ms SLA, and 500K+ TPS delivering <strong>$600K+</strong> in annual savings.
+                            </div>
+                            <ul>
+                                <li>Team scaling - led induction and technical on-boarding for 6 senior engineers with 10+ years of experience each.</li>
+                                <li>Automated deployment of 30+ Pulsar clusters using ArgoCD, Helm and GitHub actions; reducing deployment time from 45+ minutes to under 3 minutes; implemented strong Consistency and Partition Tolerance setup.</li>
+                                <li>Implemented Istio strict mTLS and observability using OpenTelemetry, Grafana and Prometheus.</li>
+                                <li>Automated Deployment of DAPR control plane to 30+ EKS clusters with sidecar injection and configuration management.</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-date">June 2023 - June 2024</div>
-                        <h3 class="timeline-title">Cloud Engineer Intern</h3>
-                        <div class="timeline-company">FICO</div>
-                        <ul>
-                            <li>Implemented lifecycle automation for AWS resources using Terraform and Boto3</li>
-                            <li>Participated in PCI attestation and CSA STAR level 2 audits for cloud infrastructure department</li>
-                            <li>Implemented automations for cost optimization and billing across the org</li>
-                        </ul> 
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Cloud Engineer Intern</h3>
+                                <div class="timeline-company">FICO</div>
+                                <div class="timeline-location">Bangalore, IN</div>
+                            </div>
+                            <div class="timeline-date">June 2023 - June 2024</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Strengthened infrastructure security by conducting regular assessments and applying compliance requirements in alignment with GDPR, PCI-DSS, CSA STAR Level 2, and CCPA frameworks.</li>
+                                <li>Integrated Wiz security platform into organization's existing AWS cloud infrastructure.</li>
+                                <li>Engineered Terraform modules to standardize and expedite cloud infrastructure deployment, promoting consistency and compliance across multiple AWS regions across 100+ AWS accounts.</li>
+                                <li>Streamlined vulnerability detection by deploying continuous integration pipelines that trigger automated Aqua container scans using GitHub actions and shared workflows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="blogs" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Technical Blogs</h2>
+                <div class="blogs-container">
+                    <div class="loading-spinner" id="blogsLoading">
+                        <div class="spinner"></div>
+                    </div>
+                    <div class="blogs-scroll" id="blogsScroll" style="display: none;">
+                        <!-- Blog cards will be dynamically inserted here -->
+                    </div>
+                    <div class="blog-nav">
+                        <button class="blog-nav-btn" id="prevBtn" onclick="scrollBlogs('prev')" disabled>
+                            ← Previous
+                        </button>
+                        <button class="blog-nav-btn" id="nextBtn" onclick="scrollBlogs('next')">
+                            Next →
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
         <section id="certifications" class="fade-in">
             <div class="container">
-                <h2 class="section-title">Seals of Mastery</h2>
+                <h2 class="section-title">Certifications</h2>
                 <div class="certifications-grid">
                     <a class="cert-card" href="https://drive.google.com/file/d/1CPOyj62NOxnrrQZU_v4yiGys19axoQy1/view?usp=sharing" target="_blank" rel="noopener">
-                        <div class="cert-icon">⚔️</div>
+                        <div class="cert-icon">🏆</div>
                         <h3>Certified Kubernetes Application Developer</h3>
-                        <div class="cert-issuer">Linux Foundation</div>                        
+                        <div class="cert-issuer">Linux Foundation • 2024</div>                        
                     </a>
                     <a class="cert-card" href="https://drive.google.com/file/d/1xYUl29T33hiiTlCn3NweUJexgNTz63t8/view?usp=sharing" target="_blank" rel="noopener">
-                        <div class="cert-icon">🛡️</div>
+                        <div class="cert-icon">🏆</div>
                         <h3>GitOps Enterprise - level 3</h3>
-                        <div class="cert-issuer">Codefresh</div>
+                        <div class="cert-issuer">Codefresh • 2025</div>
                     </a>
                     <a class="cert-card" href="https://drive.google.com/file/d/1p1UdL-VumeSRWCxczI5E7-l4oeySCXLx/view?usp=sharing" target="_blank" rel="noopener">
-                        <div class="cert-icon">⚙️</div>
+                        <div class="cert-icon">🏆</div>
                         <h3>System Design</h3>
                         <div class="cert-issuer">CodingNinjas</div>
                     </a>
@@ -829,7 +1129,7 @@
         </section>
         <section id="skills" class="fade-in">
             <div class="container">
-                <h2 class="section-title">Arsenal of War</h2>
+                <h2 class="section-title">Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-card">
                         <div class="skill-icon">☁️</div>
@@ -870,19 +1170,42 @@
                             <span class="tag">Pulsar</span>
                             <span class="tag">Kafka</span>
                             <span class="tag">DAPR</span>
-                            <span class="tag">Airflow</span>
+                            <span class="tag">KEDA</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Featured Project</h2>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Yapper - eBPF Kernel Monitor</h3>
+                        <div class="project-date">November 2025 - Present</div>
+                    </div>
+                    <div class="project-content">
+                        <p>Developed a Go/eBPF observability agent that maps kernel-level network and disk activity to Apache Pulsar topics and ledgers. Built on Cilium's eBPF libraries and BPF CO-RE to capture low-overhead metrics with 0 application instrumentation.</p>
+                        <div class="project-tech">
+                            <span class="tag">Go</span>
+                            <span class="tag">eBPF</span>
+                            <span class="tag">Cilium</span>
+                            <span class="tag">Apache Pulsar</span>
+                        </div>
+                        <a href="https://github.com/om22shree/yapper" target="_blank" class="project-link">
+                            View on GitHub →
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
         <section id="contact" class="fade-in">
             <div class="container">
-                <h2 class="section-title">Submit Your Will</h2>
+                <h2 class="section-title">Contact Me</h2>
                 <div class="contact-content">
                     <div class="contact-info">
-                        <h3>Forge an alliance?</h3>
-                        <p>I stand ready to serve the Imperium Eternal. Speak only if your cause is worthy of damnation or glory.</p>
+                        <h3>Interested in collaboration?</h3>
+                        <p>I'm always open to discussing new opportunities, innovative projects, or sharing knowledge about cloud infrastructure and platform engineering.</p>
                     </div>
                     <div class="contact-links">
                         <a href="mailto:om22shree@gmail.com" class="contact-link">
@@ -901,19 +1224,11 @@
                 </div>
             </div>
         </section>
-        <section id="wh40k" class="fade-in">
-            <div class="container">
-                <h2 class="section-title">Primarch’s Legacy</h2>
-                <p style="text-align: center; max-width: 750px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8;">
-                    <strong>Warhammer 40K</strong> is a dystopian sci-fi universe where humanity teeters on the brink of extinction in a galaxy consumed by war, chaos, and faith. Amidst this eternal night, the <strong>Space Marines</strong> stand as paragons of discipline, honor, and unwavering loyalty to the Imperium of Man. As a lifelong fan, I draw inspiration from their creed: <em>“Courage and honor. Duty and sacrifice.”</em> Their relentless pursuit of order in a chaotic cosmos mirrors my own approach to engineering: precision, resilience, and uncompromising standards.
-                </p>
-            </div>
-        </section>
     </main>
     <footer>
         <div class="container">
             <p style="text-align: center; color: var(--text-secondary); display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin: 0;">
-                💀 &copy; 2025 Om Shree — ULTRAMAR — Will of Titus
+                &copy; 2025 Om Shree — Cloud Platform Engineer
             </p>
         </div>
     </footer>
@@ -986,7 +1301,7 @@
             const RESUME_FILE_PATH = 'resume.pdf';
             const BRANCH = 'master';
             try {
-                button.innerHTML = '⏳ Forging Codex...';
+                button.innerHTML = '⏳ Downloading...';
                 button.disabled = true;
                 const githubUrl = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPOSITORY_NAME}/${BRANCH}/${RESUME_FILE_PATH}`;
                 const response = await fetch(githubUrl);
@@ -995,13 +1310,13 @@
                 const url = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = url;
-                link.download = `${GITHUB_USERNAME}_Codex_of_Heresy.pdf`;
+                link.download = `${GITHUB_USERNAME}_Resume.pdf`;
                 link.style.display = 'none';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
-                button.innerHTML = '✅ Codex Sealed!';
+                button.innerHTML = '✅ Download Complete!';
                 button.style.background = '#8b0000';
                 setTimeout(() => {
                     button.innerHTML = originalText;
@@ -1009,7 +1324,7 @@
                     button.disabled = false;
                 }, 2000);
             } catch (error) {
-                button.innerHTML = '❌ Codex Lost to Warp';
+                button.innerHTML = '❌ Download Failed';
                 button.style.background = '#8b0000';
                 setTimeout(() => {
                     button.innerHTML = originalText;
@@ -1018,6 +1333,118 @@
                 }, 3000);
             }
         }
+
+        // Blogs functionality
+        let blogsData = [];
+        let currentBlogIndex = 0;
+
+        async function fetchBlogs() {
+            try {
+                const response = await fetch('https://api.github.com/repos/om22shree/personal-website/contents/blogs?ref=master');
+                const files = await response.json();
+                
+                // Filter only MD files and ignore directories
+                const mdFiles = files.filter(file => 
+                    file.type === 'file' && 
+                    file.name.endsWith('.md')
+                );
+
+                // Fetch content for each MD file
+                const blogs = await Promise.all(mdFiles.map(async file => {
+                    const contentResponse = await fetch(file.download_url);
+                    const content = await contentResponse.text();
+                    
+                    // Extract title from first H1 or use filename
+                    const titleMatch = content.match(/^#\s+(.+)$/m);
+                    const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
+                    
+                    return {
+                        title,
+                        url: `https://github.com/om22shree/personal-website/blob/master/blogs/${file.name}`,
+                        fileName: file.name
+                    };
+                }));
+
+                // Sort by title alphabetically
+                blogs.sort((a, b) => a.title.localeCompare(b.title));
+                
+                return blogs;
+            } catch (error) {
+                console.error('Error fetching blogs:', error);
+                return [];
+            }
+        }
+
+        function renderBlogs() {
+            const blogsScroll = document.getElementById('blogsScroll');
+            const blogsLoading = document.getElementById('blogsLoading');
+            
+            if (blogsData.length === 0) {
+                blogsLoading.innerHTML = '<p style="color: var(--text-secondary);">No blogs found.</p>';
+                return;
+            }
+            
+            blogsLoading.style.display = 'none';
+            blogsScroll.style.display = 'flex';
+            
+            blogsScroll.innerHTML = blogsData.map(blog => `
+                <div class="blog-card" onclick="window.open('${blog.url}', '_blank')">
+                    <div class="blog-icon">📝</div>
+                    <h3 class="blog-title">${blog.title}</h3>
+                </div>
+            `).join('');
+            
+            updateBlogNavButtons();
+        }
+
+        function scrollBlogs(direction) {
+            const blogsScroll = document.getElementById('blogsScroll');
+            const blogCards = blogsScroll.querySelectorAll('.blog-card');
+            
+            if (blogCards.length === 0) return;
+            
+            const cardWidth = blogCards[0].offsetWidth + 32; // Include gap
+            const scrollAmount = cardWidth * 3; // Scroll 3 cards at a time
+            
+            if (direction === 'next') {
+                currentBlogIndex = Math.min(currentBlogIndex + 3, blogCards.length - 3);
+            } else {
+                currentBlogIndex = Math.max(currentBlogIndex - 3, 0);
+            }
+            
+            blogsScroll.scrollTo({
+                left: currentBlogIndex * cardWidth,
+                behavior: 'smooth'
+            });
+            
+            updateBlogNavButtons();
+        }
+
+        function updateBlogNavButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            prevBtn.disabled = currentBlogIndex === 0;
+            nextBtn.disabled = currentBlogIndex >= blogCards.length - 3;
+        }
+
+        // Initialize blogs
+        document.addEventListener('DOMContentLoaded', async () => {
+            blogsData = await fetchBlogs();
+            renderBlogs();
+            
+            // Handle scroll events to update navigation buttons
+            const blogsScroll = document.getElementById('blogsScroll');
+            if (blogsScroll) {
+                blogsScroll.addEventListener('scroll', () => {
+                    const scrollLeft = blogsScroll.scrollLeft;
+                    const cardWidth = blogsScroll.querySelector('.blog-card')?.offsetWidth + 32 || 0;
+                    currentBlogIndex = Math.round(scrollLeft / cardWidth);
+                    updateBlogNavButtons();
+                });
+            }
+        });
 
         // Optimized particle system — max 5 particles, no hang
         let particleCount = 0;
@@ -1061,20 +1488,20 @@
         });
 
         // Mouse interaction
-        const warpRiftContainer = document.querySelector('.warp-rift-container');
-        if (warpRiftContainer) {
-            warpRiftContainer.addEventListener('mousemove', (e) => {
-                const rect = warpRiftContainer.getBoundingClientRect();
+        const dataVizContainer = document.querySelector('.data-viz-container');
+        if (dataVizContainer) {
+            dataVizContainer.addEventListener('mousemove', (e) => {
+                const rect = dataVizContainer.getBoundingClientRect();
                 const centerX = rect.left + rect.width / 2;
                 const centerY = rect.top + rect.height / 2;
                 const mouseX = e.clientX - centerX;
                 const mouseY = e.clientY - centerY;
                 const rotateX = (mouseY / rect.height) * 10;
                 const rotateY = (mouseX / rect.width) * -10;
-                document.querySelector('.warp-rift').style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                document.querySelector('.data-viz').style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
-            warpRiftContainer.addEventListener('mouseleave', () => {
-                document.querySelector('.warp-rift').style.transform = 'rotateX(0deg) rotateY(0deg)';
+            dataVizContainer.addEventListener('mouseleave', () => {
+                document.querySelector('.data-viz').style.transform = 'rotateX(0deg) rotateY(0deg)';
             });
         }
     </script>
