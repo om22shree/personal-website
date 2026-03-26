@@ -3,1078 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>om_shree</title>
-    <meta name="description" content="Cloud Platform Engineer specializing in large-scale distributed systems, event streaming architectures, and Kubernetes infrastructure automation">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Om Shree | Cloud Platform Engineer</title>
+    <meta name="description" content="Cloud Platform Engineer focused on reliable distributed systems, Kubernetes platforms, and production operations.">
     <style>
+        :root {
+            color-scheme: light;
+        }
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
-        :root {
-            --bg-primary: #0a0f0b;
-            --bg-secondary: #0f1813;
-            --bg-tertiary: #141f19;
-            --text-primary: #e6ffed;
-            --text-secondary: #8b949e;
-            --accent: #39d353;
-            --accent-dim: #1a6930;
-            --border: #30363d;
-        }
         body {
-            font-family: 'JetBrains Mono', monospace;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            color: #111;
+            background: #fff;
         }
-        .container {
-            max-width: 1200px;
+        .page {
+            max-width: 760px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 2rem 1rem 3rem;
         }
-        /* Header */
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 15, 11, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            position: relative;
-            padding: 0.25rem 0;
-        }
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent);
-            transition: width 0.2s ease;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 5rem 0;
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(57, 211, 83, 0.05), transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(57, 211, 83, 0.03), transparent 50%);
-            z-index: -1;
-        }
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .emoji-hero {
-            font-size: 4rem;
-            margin: 2rem 0;
-            animation: float 3s ease-in-out infinite;
-            display: block;
-            filter: drop-shadow(0 0 20px rgba(57, 211, 83, 0.3));
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
+            border-bottom: 2px solid #111;
+            padding-bottom: 1rem;
             margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border: 1px solid var(--accent);
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: transparent;
-            color: var(--accent);
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .btn:hover {
-            background: var(--accent-dim);
-            border-color: var(--accent);
-        }
-        .btn-primary {
-            background: var(--accent);
-            color: var(--bg-primary);
-            border-color: var(--accent);
-        }
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--accent);
-        }
-        /* Sections */
-        section {
-            padding: 5rem 0;
-            position: relative;
-        }
-        .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 3rem;
-            gap: 1rem;
-        }
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        .section-line {
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-        }
-        /* Cards */
-        .card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.2s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--accent);
-        }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .card-title {
-            font-size: 1.3rem;
-            color: var(--text-primary);
-        }
-        .card-subtitle {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-        .card-date {
-            color: var(--accent);
-            font-size: 0.9rem;
-            background: var(--accent-dim);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
-        .card-content {
-            color: var(--text-secondary);
-        }
-        .card-content ul {
-            list-style: none;
-            padding: 0;
-        }
-        .card-content li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .card-content li::before {
-            content: '>>';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-        .highlight {
-            background: rgba(57, 211, 83, 0.1);
-            border-left: 3px solid var(--accent);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 4px 4px 0;
-        }
-        .highlight strong {
-            color: var(--accent);
-        }
-        /* Grid Layouts */
-        .grid {
-            display: grid;
-            gap: 2rem;
-        }
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-        .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-        /* Blogs */
-        .blogs-container {
-            position: relative;
-        }
-        .blogs-scroll {
-            display: flex;
-            gap: 1.5rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            padding: 1rem 0 2rem;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent) var(--bg-secondary);
-        }
-        .blogs-scroll::-webkit-scrollbar {
-            height: 8px;
-        }
-        .blogs-scroll::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-        .blogs-scroll::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 4px;
-        }
-        .blog-card {
-            flex: 0 0 300px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            scroll-snap-align: start;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            position: relative;
-        }
-        .blog-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
-        .blog-icon {
+        h1 {
             font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
+            margin: 0 0 0.25rem;
         }
-        .blog-title {
+        h2 {
             font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.4;
+            margin: 2rem 0 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
-        .blog-nav {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
+        p {
+            margin: 0.4rem 0;
         }
-        .blog-nav-btn {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 600;
+        ul {
+            margin: 0.5rem 0 0;
+            padding-left: 1.2rem;
         }
-        .blog-nav-btn:hover {
-            background: var(--accent-dim);
-            border-color: var(--accent);
+        li {
+            margin-bottom: 0.45rem;
         }
-        .blog-nav-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
+        a {
+            color: #0000ee;
         }
-        /* Skills & Certs */
-        .skill-card, .cert-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.2s ease;
-            color: var(--text-primary);
-            text-decoration: none;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .skill-card:hover, .cert-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
-        .skill-icon, .cert-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-        .skill-card h3, .cert-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        .tag {
-            background: var(--bg-tertiary);
-            color: var(--text-secondary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 3px;
-            font-size: 0.85rem;
-            border: 1px solid var(--border);
-        }
-        /* Contact */
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        .contact-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s ease;
-            padding: 1rem;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-        }
-        .contact-link:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-            background: var(--accent-dim);
-        }
-        /* Footer */
-        footer {
-            padding: 2rem 0;
-            text-align: center;
-            color: var(--text-secondary);
-            border-top: 1px solid var(--border);
-            background: var(--bg-secondary);
-        }
-        /* Mobile Navigation */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            z-index: 999;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-        }
-        .mobile-nav.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .mobile-nav ul {
-            list-style: none;
-            padding: 1rem 0;
-        }
-        .mobile-nav li {
-            padding: 0.75rem 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .mobile-nav li:last-child {
-            border-bottom: none;
-        }
-        .mobile-nav a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            display: block;
-            font-size: 1.1rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        /* Loading Spinner */
-        .loading-spinner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-        }
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--border);
-            border-top: 3px solid var(--accent);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hero {
-                padding-top: 80px;
-                min-height: auto;
-            }
-            .emoji-hero {
-                font-size: 3rem;
-            }
-            .hero-title {
-                font-size: 2rem;
-            }
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
-            section {
-                padding: 3rem 0;
-            }
-            .blog-card {
-                flex: 0 0 250px;
-            }
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 480px) {
-            .emoji-hero {
-                font-size: 2.5rem;
-            }
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-        }
-        /* Fade-in Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Scrollbar */
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 4px;
+        .muted {
+            color: #444;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">om_shree</div>
-            <ul class="nav-links">
-                <li><a href="#home">home</a></li>
-                <li><a href="#experience">experience</a></li>
-                <li><a href="#blogs">blogs</a></li>
-                <li><a href="#skills">skills</a></li>
-                <li><a href="#certifications">certifications</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-        </nav>
-        <div class="mobile-nav" id="mobileNav">
+    <main class="page">
+        <header>
+            <h1>Om Shree</h1>
+            <p><strong>Cloud Platform Engineer</strong></p>
+            <p class="muted">Bangalore, India</p>
+            <p>
+                <a href="resume.pdf">Resume (PDF)</a> |
+                <a href="https://github.com/om22shree" target="_blank" rel="noopener">GitHub</a> |
+                <a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener">LinkedIn</a> |
+                <a href="mailto:om22shree@gmail.com">Email</a>
+            </p>
+        </header>
+
+        <section>
+            <h2>Profile</h2>
+            <p>
+                I build and operate distributed platforms with a focus on uptime, cost control,
+                and clear incident response.
+            </p>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <p><strong>Cloud Engineer 1, FICO</strong> (2025–Present)</p>
             <ul>
-                <li><a href="#home" onclick="closeMobileMenu()">home</a></li>
-                <li><a href="#experience" onclick="closeMobileMenu()">experience</a></li>
-                <li><a href="#blogs" onclick="closeMobileMenu()">blogs</a></li>
-                <li><a href="#skills" onclick="closeMobileMenu()">skills</a></li>
-                <li><a href="#certifications" onclick="closeMobileMenu()">certifications</a></li>
-                <li><a href="#projects" onclick="closeMobileMenu()">projects</a></li>
-                <li><a href="#contact" onclick="closeMobileMenu()">contact</a></li>
+                <li>Built distributed DNS mesh architecture across AWS accounts and regions.</li>
+                <li>Supported production Pulsar, Kafka, Route53, and DAPR services.</li>
+                <li>Participated in SRE/PRE incident response for critical systems.</li>
             </ul>
-        </div>
-    </header>
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="emoji-hero">👨‍💻🚀</div>
-                    <h1 class="hero-title">Om Shree</h1>
-                    <div class="hero-subtitle">Cloud Platform Engineer</div>
-                    <p class="hero-description">Specializing in large-scale distributed systems, event streaming architectures, and Kubernetes infrastructure automation with a proven track record in production environments.</p>
-                    <div class="cta-buttons">
-                        <a href="#" class="btn btn-primary" onclick="downloadResume()">
-                            📄 download resume
-                        </a>
-                        <a href="#contact" class="btn">📧 get in touch</a>
-                    </div>
-                </div>
-            </div>
+
+            <p><strong>Cloud Engineer Associate, FICO</strong> (2024–2025)</p>
+            <ul>
+                <li>Improved Kafka platform reliability and performance at scale.</li>
+                <li>Automated multi-cluster Pulsar and DAPR deployments with GitOps workflows.</li>
+                <li>Implemented service mesh security and observability standards.</li>
+            </ul>
         </section>
-        <section id="experience" class="fade-in">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">experience</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Cloud Engineer 1</h3>
-                            <div class="card-subtitle">FICO</div>
-                            <div class="card-subtitle">Bangalore, IN</div>
-                        </div>
-                        <div class="card-date">2025-07 - Present</div>
-                    </div>
-                    <div class="card-content">
-                        <ul>
-                            <li>Developed distributed DNS mesh architecture across multiple AWS accounts and regions, utilizing Terraform to configure numerous Route 53 hosted zones and VPC connections for cell-based architecture.</li>
-                            <li>Provided 12/7 on-call support for production Pulsar, Kafka, Route53, and DAPR services; improved MTTR by training L1 support teams and establishing an escalation hierarchy.</li>
-                            <li>Participated in SRE and PRE incident response calls alongside staff engineers, architects and VP-level executives.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Cloud Engineer Associate</h3>
-                            <div class="card-subtitle">FICO</div>
-                            <div class="card-subtitle">Bangalore, IN</div>
-                        </div>
-                        <div class="card-date">2024-07 - 2025-06</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="highlight">
-                            <strong>Key Achievement:</strong> Optimized 10+ Kafka clusters to maintain 99.99% availability, 200ms SLA, and 500K+ TPS delivering <strong>$600K+</strong> in annual savings.
-                        </div>
-                        <ul>
-                            <li>Team scaling - led induction and technical on-boarding for 6 senior engineers with 10+ years of experience each.</li>
-                            <li>Automated deployment of 30+ Pulsar clusters using ArgoCD, Helm and GitHub actions; reducing deployment time from 45+ minutes to under 3 minutes; implemented strong Consistency and Partition Tolerance setup.</li>
-                            <li>Implemented Istio strict mTLS and observability using OpenTelemetry, Grafana and Prometheus.</li>
-                            <li>Automated Deployment of DAPR control plane to 30+ EKS clusters with sidecar injection and configuration management.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Cloud Engineer Intern</h3>
-                            <div class="card-subtitle">FICO</div>
-                            <div class="card-subtitle">Bangalore, IN</div>
-                        </div>
-                        <div class="card-date">2023-06 - 2024-06</div>
-                    </div>
-                    <div class="card-content">
-                        <ul>
-                            <li>Strengthened infrastructure security by conducting regular assessments and applying compliance requirements in alignment with GDPR, PCI-DSS, CSA STAR Level 2, and CCPA frameworks.</li>
-                            <li>Integrated Wiz security platform into organization's existing AWS cloud infrastructure.</li>
-                            <li>Engineered Terraform modules to standardize and expedite cloud infrastructure deployment, promoting consistency and compliance across multiple AWS regions across 100+ AWS accounts.</li>
-                            <li>Streamlined vulnerability detection by deploying continuous integration pipelines that trigger automated Aqua container scans using GitHub actions and shared workflows.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="blogs" class="fade-in">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">blogs</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="blogs-container">
-                    <div class="loading-spinner" id="blogsLoading">
-                        <div class="spinner"></div>
-                    </div>
-                    <div class="blogs-scroll" id="blogsScroll" style="display: none;">
-                        <!-- Blog cards will be dynamically inserted here -->
-                    </div>
-                    <div class="blog-nav">
-                        <button class="blog-nav-btn" id="prevBtn" onclick="scrollBlogs('prev')" disabled>
-                            ← prev
-                        </button>
-                        <button class="blog-nav-btn" id="nextBtn" onclick="scrollBlogs('next')">
-                            next →
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="certifications" class="fade-in">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">certifications</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="grid grid-3">
-                    <a class="cert-card" href="https://drive.google.com/file/d/1CPOyj62NOxnrrQZU_v4yiGys19axoQy1/view?usp=sharing" target="_blank" rel="noopener">
-                        <div class="cert-icon">🏆</div>
-                        <h3>Certified Kubernetes Application Developer</h3>
-                        <div class="card-subtitle">Linux Foundation • 2024</div>                        
+
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <a href="https://github.com/om22shree/yapper" target="_blank" rel="noopener">
+                        Yapper (Go/eBPF kernel monitor)
                     </a>
-                    <a class="cert-card" href="https://drive.google.com/file/d/1xYUl29T33hiiTlCn3NweUJexgNTz63t8/view?usp=sharing" target="_blank" rel="noopener">
-                        <div class="cert-icon">🏆</div>
-                        <h3>GitOps Enterprise - level 3</h3>
-                        <div class="card-subtitle">Codefresh • 2025</div>
-                    </a>
-                    <a class="cert-card" href="https://drive.google.com/file/d/1p1UdL-VumeSRWCxczI5E7-l4oeySCXLx/view?usp=sharing" target="_blank" rel="noopener">
-                        <div class="cert-icon">🏆</div>
-                        <h3>System Design</h3>
-                        <div class="card-subtitle">CodingNinjas</div>
-                    </a>
-                </div>
-            </div>
+                </li>
+            </ul>
         </section>
-        <section id="skills" class="fade-in">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">skills</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="grid grid-2">
-                    <div class="skill-card">
-                        <div class="skill-icon">☁️</div>
-                        <h3>Infrastructure</h3>
-                        <div class="skill-tags">
-                            <span class="tag">AWS</span>
-                            <span class="tag">EKS</span>
-                            <span class="tag">Linux</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Go</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">🐳</div>
-                        <h3>Orchestration</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Kubernetes</span>
-                            <span class="tag">Helm</span>
-                            <span class="tag">Istio</span>
-                            <span class="tag">ELK stack</span>
-                            <span class="tag">OpenTelemetry</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">🏗️</div>
-                        <h3>Platform Tooling</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Terraform</span>
-                            <span class="tag">Crossplane</span>
-                            <span class="tag">ArgoCD</span>
-                            <span class="tag">GitOps</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">🔄</div>
-                        <h3>Event Streaming</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Pulsar</span>
-                            <span class="tag">Kafka</span>
-                            <span class="tag">DAPR</span>
-                            <span class="tag">KEDA</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        <section>
+            <h2>Writing</h2>
+            <p><a href="https://github.com/om22shree/personal-website/tree/master/blogs" target="_blank" rel="noopener">Technical notes and blogs</a></p>
         </section>
-        <section id="projects" class="fade-in">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">projects</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">Yapper - eBPF Kernel Monitor</div>
-                        <div class="card-date">2025-11 - Present</div>
-                    </div>
-                    <div class="card-content">
-                        <p>Developed a Go/eBPF observability agent that maps kernel-level network and disk activity to Apache Pulsar topics and ledgers. Built on Cilium's eBPF libraries and BPF CO-RE to capture low-overhead metrics with 0 application instrumentation.</p>
-                        <div class="skill-tags" style="margin-top: 1rem;">
-                            <span class="tag">Go</span>
-                            <span class="tag">eBPF</span>
-                            <span class="tag">Cilium</span>
-                            <span class="tag">Apache Pulsar</span>
-                        </div>
-                        <div style="margin-top: 1.5rem; text-align: center;">
-                            <a href="https://github.com/om22shree/yapper" target="_blank" class="btn">
-                                view on github →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="fade-in">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">contact</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="contact-container">
-                    <p>Interested in collaboration? I'm always open to discussing new opportunities, innovative projects, or sharing knowledge about cloud infrastructure and platform engineering.</p>
-                    <div class="contact-links">
-                        <a href="mailto:om22shree@gmail.com" class="contact-link">
-                            <span>📧</span>
-                            <span>om22shree@gmail.com</span>
-                        </a>
-                        <a href="https://linkedin.com/in/om22shree" class="contact-link">
-                            <span>💼</span>
-                            <span>linkedin.com/in/om22shree</span>
-                        </a>
-                        <a href="tel:+918360195490" class="contact-link">
-                            <span>📱</span>
-                            <span>+91 8360195490</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
+        <section>
+            <h2>Certifications</h2>
+            <ul>
+                <li>Certified Kubernetes Application Developer (2024)</li>
+                <li>GitOps Enterprise Level 3 (2025)</li>
+            </ul>
         </section>
     </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Om Shree — Cloud Platform Engineer</p>
-        </div>
-    </footer>
-    <script>
-        // Mobile menu
-        function toggleMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            if (mobileNav.classList.contains('active')) {
-                closeMobileMenu();
-            } else {
-                mobileNav.classList.add('active');
-                menuBtn.innerHTML = '✕';
-                document.body.style.overflow = 'hidden';
-            }
-        }
-        function closeMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            mobileNav.classList.remove('active');
-            menuBtn.innerHTML = '☰';
-            document.body.style.overflow = '';
-        }
-        document.addEventListener('click', function(event) {
-            const mobileNav = document.getElementById('mobileNav');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            if (!mobileNav.contains(event.target) && !menuBtn.contains(event.target)) {
-                closeMobileMenu();
-            }
-        });
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                closeMobileMenu();
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = window.innerWidth <= 768 ? 70 : 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Fade-in on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Resume download
-        async function downloadResume() {
-            const button = event.target;
-            const originalText = button.innerHTML;
-            const GITHUB_USERNAME = 'om22shree';
-            const REPOSITORY_NAME = 'personal-website';
-            const RESUME_FILE_PATH = 'resume.pdf';
-            const BRANCH = 'master';
-            try {
-                button.innerHTML = '⏳ downloading...';
-                button.disabled = true;
-                const githubUrl = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPOSITORY_NAME}/${BRANCH}/${RESUME_FILE_PATH}`;
-                const response = await fetch(githubUrl);
-                if (!response.ok) throw new Error(`Failed: ${response.status}`);
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = `${GITHUB_USERNAME}_Resume.pdf`;
-                link.style.display = 'none';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                window.URL.revokeObjectURL(url);
-                button.innerHTML = '✅ download complete';
-                button.style.background = 'var(--accent)';
-                button.style.color = 'var(--bg-primary)';
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.style.background = '';
-                    button.style.color = '';
-                    button.disabled = false;
-                }, 2000);
-            } catch (error) {
-                button.innerHTML = '❌ download failed';
-                button.style.background = 'var(--accent)';
-                button.style.color = 'var(--bg-primary)';
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.style.background = '';
-                    button.style.color = '';
-                    button.disabled = false;
-                }, 3000);
-            }
-        }
-
-        // Blogs functionality
-        let blogsData = [];
-        let currentBlogIndex = 0;
-
-        async function fetchBlogs() {
-            try {
-                const response = await fetch('https://api.github.com/repos/om22shree/personal-website/contents/blogs?ref=master');
-                const files = await response.json();
-                
-                // Filter only MD files and ignore directories
-                const mdFiles = files.filter(file => 
-                    file.type === 'file' && 
-                    file.name.endsWith('.md')
-                );
-
-                // Fetch content for each MD file
-                const blogs = await Promise.all(mdFiles.map(async file => {
-                    const contentResponse = await fetch(file.download_url);
-                    const content = await contentResponse.text();
-                    
-                    // Extract title from first H1 or use filename
-                    const titleMatch = content.match(/^#\s+(.+)$/m);
-                    const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
-                    
-                    return {
-                        title,
-                        url: `https://github.com/om22shree/personal-website/blob/master/blogs/${file.name}`,
-                        fileName: file.name
-                    };
-                }));
-
-                // Sort by title alphabetically
-                blogs.sort((a, b) => a.title.localeCompare(b.title));
-                
-                return blogs;
-            } catch (error) {
-                console.error('Error fetching blogs:', error);
-                return [];
-            }
-        }
-
-        function renderBlogs() {
-            const blogsScroll = document.getElementById('blogsScroll');
-            const blogsLoading = document.getElementById('blogsLoading');
-            
-            if (blogsData.length === 0) {
-                blogsLoading.innerHTML = '<p style="color: var(--text-secondary);">No blogs found.</p>';
-                return;
-            }
-            
-            blogsLoading.style.display = 'none';
-            blogsScroll.style.display = 'flex';
-            
-            blogsScroll.innerHTML = blogsData.map(blog => `
-                <div class="blog-card" onclick="window.open('${blog.url}', '_blank')">
-                    <div class="blog-icon">📝</div>
-                    <h3 class="blog-title">${blog.title}</h3>
-                </div>
-            `).join('');
-            
-            updateBlogNavButtons();
-        }
-
-        function scrollBlogs(direction) {
-            const blogsScroll = document.getElementById('blogsScroll');
-            const blogCards = blogsScroll.querySelectorAll('.blog-card');
-            
-            if (blogCards.length === 0) return;
-            
-            const cardWidth = blogCards[0].offsetWidth + 24; // Include gap
-            const scrollAmount = cardWidth * 3; // Scroll 3 cards at a time
-            
-            if (direction === 'next') {
-                currentBlogIndex = Math.min(currentBlogIndex + 3, blogCards.length - 3);
-            } else {
-                currentBlogIndex = Math.max(currentBlogIndex - 3, 0);
-            }
-            
-            blogsScroll.scrollTo({
-                left: currentBlogIndex * cardWidth,
-                behavior: 'smooth'
-            });
-            
-            updateBlogNavButtons();
-        }
-
-        function updateBlogNavButtons() {
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const blogCards = document.querySelectorAll('.blog-card');
-            
-            prevBtn.disabled = currentBlogIndex === 0;
-            nextBtn.disabled = currentBlogIndex >= blogCards.length - 3;
-        }
-
-        // Initialize blogs
-        document.addEventListener('DOMContentLoaded', async () => {
-            blogsData = await fetchBlogs();
-            renderBlogs();
-            
-            // Handle scroll events to update navigation buttons
-            const blogsScroll = document.getElementById('blogsScroll');
-            if (blogsScroll) {
-                blogsScroll.addEventListener('scroll', () => {
-                    const scrollLeft = blogsScroll.scrollLeft;
-                    const cardWidth = blogsScroll.querySelector('.blog-card')?.offsetWidth + 24 || 0;
-                    currentBlogIndex = Math.round(scrollLeft / cardWidth);
-                    updateBlogNavButtons();
-                });
-            }
-        });
-    </script>
 </body>
 </html>
