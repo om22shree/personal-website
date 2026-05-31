@@ -1,108 +1,103 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=0.6in]{geometry}
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[top=0.42in,bottom=0.42in,left=0.55in,right=0.55in]{geometry}
+\usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage{titlesec}
-\usepackage{hyperref}
-\usepackage{xcolor}
-\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[none]{hyphenat}
 
-% Define colors
-\definecolor{darkblue}{RGB}{0,51,102}
-
-% Hyperlink setup
-\hypersetup{
-    colorlinks=true,
-    linkcolor=darkblue,
-    urlcolor=darkblue,
-    pdftitle={Om Shree - DevOps Resume}
-}
-
-% Section formatting
-\titleformat{\section}{\large\bfseries\color{darkblue}}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{8pt}{4pt}
-
-% Custom commands
-\newcommand{\resumeSubheading}[4]{
-    \textbf{#1} \hfill #2 \\
-    \textit{#3} \hfill \textit{#4}
-    \vspace{-3pt}
-}
-
-% Remove page numbering and reduce spacing
-\pagestyle{empty}
+\pagenumbering{gobble}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=0.15in, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=2pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{0.96}
+\sloppy
+\emergencystretch=2em
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+\setlist[itemize]{leftmargin=1.1em, itemsep=2pt, topsep=2pt, parsep=0pt, partopsep=0pt}
+
+\newcommand{\resumeRole}[2]{%
+  \vspace{3pt}
+  \textbf{\textsc{#1}} $\mid$ #2
+}
+
+\newcommand{\resumeProject}[3]{%
+  \vspace{2pt}
+  \textbf{#1} $\mid$ \href{#2}{visit docs or code} $\mid$ \textit{#3}
+}
 
 \begin{document}
 
-%----------HEADING----------
 \begin{center}
-    {\Huge\bfseries Om Shree} \\
-    \vspace{3pt}
-    Bangalore, IN $|$ om22shree@gmail.com $|$ +91 8360195490 $|$ \href{https://www.omshree.space}{omshree.space}
+    {\Large \textbf{Om Shree}}\\[2pt]
+    +91 8360195490 $\mid$ \href{mailto:om22shree@gmail.com}{om22shree@gmail.com} $\mid$
+    \href{https://www.linkedin.com/in/om22shree}{linkedin.com/in/om22shree}
+    
+    Platform Engineer focused on \textbf{Kubernetes}, \textbf{Terraform}, \textbf{AWS} and \textbf{streaming} infrastructure
 \end{center}
 
-%----------SUMMARY----------
-\section{Summary}
-Cloud Platform Engineer specializing in large-scale distributed systems and event streaming architectures. Adept with Kubernetes, AWS infrastructure automation, and high-availability system design with proven track record in production environments. Capable of scaling up teams and improving operational tempo.
+\section*{Experience}
 
-%----------SKILLS----------
-\section{Technical Skills}
-\textbf{Cloud Infrastructure} - AWS, Kubernetes, Docker, Terraform, Multi-region Cell-based architecture \\
-\textbf{DevOps Automation} - ArgoCD, GitHub Actions, Helm, GitOps, CI/CD Pipelines, Infrastructure as Code \\
-\textbf{Event Streaming} - Kafka, StreamNative Pulsar, Airflow, KEDA Autoscaling \\
-\textbf{Monitoring and Security} - Grafana, ELK Stack, OpenTelemetry, Istio, mTLS, PCI-DSS, Wiz Security \\
-\textbf{Programming} - Python, Go, Bash, Boto3, FastAPI
+\textbf{FICO} $\mid$ Global Platform Capabilities
 
-%----------EXPERIENCE----------
-\section{Experience}
-
-\resumeSubheading
-{Cloud Engineer I}{June 2023 -- Present}
-{Global Platform Capabilities, FICO}{Bangalore, IN}
-\vspace{0.2cm}
+\resumeRole{Cloud Engineer 1}{Jul 2025 -- Present}
 \begin{itemize}
-    \item Team scaling \textbf{from 3 to 9 engineers}; led induction and technical onboarding for 6 senior engineers with 10+ years of experience each
-    \item Optimized 10+ Kafka clusters to maintain \textbf{99.99\% availability, 200ms SLA, and 500K+ TPS}; identified optimizations delivering \textbf{\$600K+ in annual savings}
-    \item Automated deployment of \textbf{30+ Pulsar clusters}; reducing deployment time from 45+ minutes to under 3 minutes; implemented strong CP setup; handles \textbf{100K TPS per cluster}
-    \item Implemented \textbf{KEDA} autoscaling to reduce disruptions by 60\%; implemented \textbf{ELK stack} for observability and alerting
-    \item Participated in \textbf{SRE and PRE} incident response calls alongside staff engineers, architects and VP-level executives
-    \item Provided \textbf{24/7 on-call} support for production Pulsar, Kafka, Route53, and DAPR services; \textbf{improved MTTR 4X by training L1 support teams} and establishing an escalation hierarchy
-    \item Built multi-region AWS account life-cycle automation to \textbf{manage 100+ AWS accounts}; migrated CI/CD pipelines from BitBucket-Jenkins to \textbf{GitHub workflows} with zero downtime
-    \item Deployed \textbf{Wiz} security platform across the organization and participated in \textbf{PCI-DSS} compliance audits for cloud infrastructure
-    \item Multiple spot awards, exceeded performance incentive targets, \textbf{3 hikes and 2 promotions in 2 years}
+    \item Designed the \textbf{central DNS mesh} powering production and non-production workloads across multi-account, multi-region \textbf{AWS} environments using \textbf{Terraform}, \textbf{Route 53}, \textbf{AWS Lambda}, and VPC associations for \textbf{cell-based architecture}
+    \item Supported \textbf{SRE/PRE} incidents across production \textbf{Pulsar}, \textbf{Kafka}, \textbf{Route 53} and \textbf{Dapr} services in a \textbf{12/7 on-call} model alongside staff engineers, architects and VP leadership
+    \item Developed an \textbf{MCP} server for the team to aggregate context across \textbf{Jira, Confluence, BitBucket} and \textbf{Github} to provide team-specific incident resolution steps and \textbf{RCA} reports
+    \item Conducted \textbf{POC} and \textbf{feasibility study} for org-wide adoption of \textbf{AWS DevOps agent}
 \end{itemize}
 
-%----------PROJECTS----------
-\section{Key Projects}
-
-\textbf{Core DNS Infrastructure} -- FICO Proprietary
+\resumeRole{Cloud Engineer Associate}{Jul 2024 -- Jun 2025}
 \begin{itemize}
-    \item Designed cross-account multi-region \textbf{DNS mesh} for hundreds of Route53 hosted zones and VPCs using Terraform and AWS (\href{https://github.com/om22shree/personal-website/blob/master/blogs/dns_mesh.md}{architecture blog})
-    \item Forms the foundational infrastructure for \textbf{cell-based architecture} enabling secure inter-service communication between every NorthStar product
+    \item Optimized 10+ \textbf{Kafka EC2} clusters for \textbf{500K+ TPS, 200ms SLA, and 99.9\% availability}, contributing to \textbf{\$600K+ in annual savings}
+    \item Migrated Pulsar and DAPR from \textbf{Istio} sidecars to \textbf{Gloo mesh} and implemented platform observability for \textbf{Kubernetes} workloads using \textbf{OpenTelemetry}, \textbf{Prometheus} and \textbf{Grafana}
+    \item Supported \textbf{technical on-boarding} for 6 senior engineers; Led \textbf{handover} and \textbf{trained} L1 infrastructure support teams
+    \item Built and orchestrated \textbf{DAGs} using \textbf{kubernetes} CRDs for \textbf{function-mesh}
+    \item Built and automated deployment of \textbf{Pulsar platform} across 30+ \textbf{EKS} clusters using \textbf{ArgoCD}, \textbf{Helm}, and \textbf{GitHub Actions}, reducing rollout time from 45+ minutes to under 3 minutes
 \end{itemize}
 
-\textbf{DAPR \& Gloo Gateway Integration} -- FICO Proprietary
+\resumeRole{Cloud Engineer Intern}{Jun 2023 -- Jun 2024}
 \begin{itemize}
-    \item Deployed DAPR control plane to 30+ EKS clusters with \textbf{automated sidecar injection} and configuration management (\href{https://github.com/om22shree/personal-website/blob/master/blogs/dapr_cp.md}{implementation blog})
-    \item Integrated with Gloo Gateway for cross-cluster connectivity and secure \textbf{service mesh} capabilities
+    \item Built \textbf{Terraform} modules to standardize infrastructure deployment across 100+ \textbf{AWS} accounts and multiple regions as per \textbf{shared services architecture}
+    \item Integrated \textbf{Wiz} into \textbf{AWS} infrastructure and participated in \textbf{audit} assessments for \textbf{GDPR}, \textbf{PCI-DSS}, \textbf{CSA STAR Level 2}, and \textbf{CCPA} frameworks
+    \item Managed core \textbf{AWS organization} and implemented centralized \textbf{SCPs} through \textbf{Terraform}; Centralized container vulnerability scanning using shared \textbf{GitHub actions} leveraging \textbf{aqua}
+    \item Member of the \textbf{DevSecOps} team, provided cross-team \textbf{L3 migration support} and served as \textbf{cloud infrastructure SPOC} for cybersecurity
 \end{itemize}
 
-\textbf{Airflow Transaction Analyzer} -- \href{https://github.com/om22shree}{GitHub}
+\section*{Projects and Case Studies}
+
+\resumeProject{EC2 and JVM tuning for stream systems}
+{https://github.com/om22shree/<repo-name>/blob/main/<article-name>.md}
+{2024}
 \begin{itemize}
-    \item Built an end-to-end Airflow \textbf{orchestration pipeline} using Python and Kubernetes workers for analysis of 100K+ TPS; generates a \textbf{correlation score for fraud detection}
-    \item Developed a custom data-ingestion service using \textbf{Go channels} to feed real-time transactions at a rate of 100K TPS
+    \item Trade-off analysis and kernel FS tuning for EC2 Linux customized for event streaming systems
+    \item Analysis and optimizations around JVM GC and Heap memory for streaming systems
 \end{itemize}
 
-%----------CERTIFICATIONS----------
-\section{Certifications}
-Certified Kubernetes Application Developer (\href{https://drive.google.com/file/d/1CPOyj62NOxnrrQZU_v4yiGys19axoQy1/view?usp=sharing}{CKAD}) - Linux Foundation $|$ \href{https://drive.google.com/file/d/1xYUl29T33hiiTlCn3NweUJexgNTz63t8/view?usp=sharing}{GitOps Enterprise} L-3 - Codefresh $|$ \href{https://drive.google.com/file/d/1p1UdL-VumeSRWCxczI5E7-l4oeySCXLx/view?usp=sharing}{System Design} - Coding Ninjas
+\resumeProject{Core DNS mesh architecture on AWS}{https://github.com/om22shree}{2025}
+\begin{itemize}
+    \item Design and architecture document to build a centralized DNS mesh powering production workloads across multi-account and multi-region AWS environments  
+\end{itemize}
 
-%----------EDUCATION----------
-\section{Education}
-\resumeSubheading
-{B.Tech in Information Technology}{2020 -- 2024}
-{KIIT University, Bhubaneswar}{CGPA: 9.2/10}
+\resumeProject{Pulsar Hammer}{https://github.com/om22shree}{2025}
+\begin{itemize}
+    \item High-throughput, agent-first, multi-threaded Go app built to stress test pulsar clusters using gRPC
+\end{itemize}
+
+\section*{Education and Certifications}
+\textbf{GitOps Enterprise Level 3}, Codefresh, issued 2025 \newline
+\textbf{CKAD}, Linux foundation, issued 2024 \newline
+\textbf{B.Tech in Information Technology}, SCE, KIIT University, 2020 - 2024
+\begin{itemize}
+    \item 9.2 CGPA
+    \item Coursework includes DSA, OOP, DBMS, COA, ML, Algorithm design and Networking
+\end{itemize}
 
 \end{document}
