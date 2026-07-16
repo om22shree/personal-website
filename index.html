@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Shree</title>
-    <meta name="description" content="Cloud Platform Engineer. Distributed systems, event streaming, Kubernetes and AWS infrastructure.">
+    <meta name="description"
+        content="Cloud Platform Engineer. Distributed systems, event streaming, Kubernetes and AWS infrastructure.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <style>
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         :root {
-            --bg:        #1a1a1a;
-            --bg-raised: #212121;
-            --rule:      #333333;
-            --muted:     #5a5a5a;
-            --body:      #b0a898;
-            --primary:   #e8e0d0;
-            --accent:    #4ecb8a;
-            --accent-dim:#163d28;
+            --bg: #0a0a0a;
+            --bg-raised: #121212;
+            --rule: #262626;
+            --muted: #949494;
+            --body: #e5e5e5;
+            --primary: #ffffff;
+            --accent: #ffffff;
+            --accent-dim: #262626;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px;
+            /* Scales all rem-based typography proportionally */
+        }
 
         body {
             font-family: 'IBM Plex Mono', monospace;
             background: var(--bg);
             color: var(--body);
             line-height: 1.7;
-            font-size: 14px;
-            font-weight: 300;
+            font-size: 16px;
+            /* Base font size */
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -72,7 +82,9 @@
             text-decoration: none;
         }
 
-        .logo span { color: var(--accent); }
+        .logo span {
+            color: var(--accent);
+        }
 
         .nav-links {
             display: flex;
@@ -89,7 +101,9 @@
             transition: color 0.15s;
         }
 
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover {
+            color: var(--accent);
+        }
 
         .hamburger {
             display: none;
@@ -120,7 +134,9 @@
             padding: 1.5rem 2rem;
         }
 
-        .mobile-nav.open { display: block; }
+        .mobile-nav.open {
+            display: block;
+        }
 
         .mobile-nav a {
             display: block;
@@ -133,8 +149,13 @@
             border-bottom: 1px solid var(--rule);
         }
 
-        .mobile-nav a:last-child { border-bottom: none; }
-        .mobile-nav a:hover { color: var(--accent); }
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--accent);
+        }
 
         /* SECTIONS */
         section {
@@ -169,7 +190,9 @@
             padding-top: 52px;
         }
 
-        .hero-inner { padding: 4rem 0 2rem; }
+        .hero-inner {
+            padding: 4rem 0 2rem;
+        }
 
         .hero-kicker {
             font-size: 0.7rem;
@@ -265,7 +288,9 @@
             border-top: 1px solid var(--rule);
         }
 
-        .exp-entry:first-child { border-top: none; }
+        .exp-entry:first-child {
+            border-top: none;
+        }
 
         .exp-header {
             display: flex;
@@ -299,7 +324,7 @@
         }
 
         .exp-highlight {
-            background: rgba(78, 203, 138, 0.06);
+            background: rgba(255, 255, 255, 0.04);
             border-left: 2px solid var(--accent);
             padding: 0.8rem 1.2rem;
             margin-bottom: 1.2rem;
@@ -307,7 +332,9 @@
             color: var(--body);
         }
 
-        .exp-highlight strong { color: var(--accent); }
+        .exp-highlight strong {
+            color: var(--accent);
+        }
 
         .exp-list {
             list-style: none;
@@ -344,8 +371,13 @@
             transition: color 0.15s;
         }
 
-        .contact-line:first-child { border-top: 1px solid var(--rule); }
-        .contact-line:hover { color: var(--accent); }
+        .contact-line:first-child {
+            border-top: 1px solid var(--rule);
+        }
+
+        .contact-line:hover {
+            color: var(--accent);
+        }
 
         .contact-label {
             font-size: 0.65rem;
@@ -363,7 +395,10 @@
             letter-spacing: 0.08em;
         }
 
-        .blog-list { display: flex; flex-direction: column; }
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+        }
 
         .blog-entry {
             display: flex;
@@ -377,15 +412,23 @@
             transition: color 0.15s;
         }
 
-        .blog-entry:first-child { border-top: 1px solid var(--rule); }
-        .blog-entry:hover { color: var(--primary); }
+        .blog-entry:first-child {
+            border-top: 1px solid var(--rule);
+        }
+
+        .blog-entry:hover {
+            color: var(--primary);
+        }
 
         .blog-entry:hover .blog-arrow {
             color: var(--accent);
             transform: translateX(4px);
         }
 
-        .blog-name { font-size: 0.82rem; flex: 1; }
+        .blog-name {
+            font-size: 0.82rem;
+            flex: 1;
+        }
 
         .blog-arrow {
             font-size: 0.75rem;
@@ -420,260 +463,312 @@
 
         /* RESPONSIVE */
         @media (max-width: 640px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-            .hero-name { font-size: 3.2rem; }
-            .hero-meta { gap: 1.5rem; }
-            .exp-header { flex-direction: column; gap: 0.3rem; }
-            .hero-actions { flex-direction: column; }
-            .btn { text-align: center; }
-            .blog-entry { flex-direction: column; gap: 0.2rem; }
-            .blog-arrow { display: none; }
-            .contact-label { width: 55px; font-size: 0.6rem; }
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-name {
+                font-size: 3.2rem;
+            }
+
+            .hero-meta {
+                gap: 1.5rem;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+            .blog-entry {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .blog-arrow {
+                display: none;
+            }
+
+            .contact-label {
+                width: 55px;
+                font-size: 0.6rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <a href="#hero" class="logo">Om<span>.</span>Shree</a>
-        <ul class="nav-links">
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#blogs">Writing</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <a href="#hero" class="logo">Om<span>.</span>Shree</a>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#writing">Writing</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
 
-<div class="mobile-nav" id="mobileNav">
-    <a href="#experience" onclick="closeMobile()">Experience</a>
-    <a href="#contact" onclick="closeMobile()">Contact</a>
-    <a href="#blogs" onclick="closeMobile()">Writing</a>
-</div>
-
-<main>
-
-    <!-- HERO -->
-    <section id="hero">
-        <div class="wrap hero-inner">
-            <p class="hero-kicker">Cloud Platform Engineer</p>
-            <h1 class="hero-name">Om<br>Shree</h1>
-            <p class="hero-role">
-                Distributed systems. Event streaming. AWS & k8s infrastructure.
-            </p>
-            <div class="hero-meta">
-                <div class="meta-item">
-                    <span class="meta-label">Location</span>
-                    <span class="meta-value">Bangalore, IN</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Currently</span>
-                    <span class="meta-value">FICO</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Experience</span>
-                    <span class="meta-value">3 years</span>
-                </div>
-            </div>
-            <div class="hero-actions">
-                <button class="btn btn-solid" onclick="downloadResume(this)">Download Resume</button>
-                <a href="#contact" class="btn">Get in Touch</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="fade">
-        <div class="wrap">
-            <p class="section-label">Track record</p>
-            <h2 class="section-title">Experience</h2>
-
-            <div class="exp-entry">
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-title">Cloud Engineer I</div>
-                        <div class="exp-org">FICO — Bangalore, IN</div>
-                    </div>
-                    <div class="exp-period">2025-06 — Present</div>
-                </div>
-                <div class="exp-highlight">
-                    <strong>Developed distributed multi-region DNS mesh architecture for next-gen platform</strong>
-                </div>
-                <ul class="exp-list">
-                    <li>Developed a distributed DNS mesh architecture for FICO's next gen platform using Route53, Terraform and lambda functions </li>
-                    <li>Migrated FICO AWS Organization structure to integrate with CloudWan network segments for next-gen platform</li>
-                    <li>Explored and tested AWS DevOps agent for DNS mesh and CWAN networking components to preempt incidents and reduce MTTR</li>
-                    <li>Development of blue-green deployment of kafka stack with zero downtime and zero data loss</li>
-                </ul>
-            </div>
-
-            <div class="exp-entry">
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-title">Cloud Engineer Associate</div>
-                        <div class="exp-org">FICO — Bangalore, IN</div>
-                    </div>
-                    <div class="exp-period">2024-06 — 2025-06</div>
-                </div>
-                <div class="exp-highlight">
-                    <strong>$600K+ annual savings</strong> — optimized 10+ Kafka clusters to 99.99% availability, 200ms SLA, 500K+ TPS.
-                </div>
-                <ul class="exp-list">
-                    <li>Led induction and technical onboarding for 6 senior engineers with 8+ years of experience each.</li>
-                    <li>Automated deployment of 30+ Pulsar clusters via ArgoCD, Helm, and GitHub Actions — cut deployment time from 45+ minutes to under 3 minutes with CP/strong consistency.</li>
-                    <li>Implemented Istio strict mTLS and full observability stack for pulsar clusters using OpenTelemetry, Grafana, and Prometheus.</li>
-                    <li>Automated DAPR control plane deployment across 30+ EKS clusters with sidecar injection and configuration management.</li>
-                </ul>
-            </div>
-
-            <div class="exp-entry">
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-title">Cloud Engineer Intern</div>
-                        <div class="exp-org">FICO — Bangalore, IN</div>
-                    </div>
-                    <div class="exp-period">2023-06 — 2024-06</div>
-                </div>
-                <ul class="exp-list">
-                    <li>Conducted security assessments and applied compliance requirements across GDPR, PCI-DSS, CSA STAR Level 2, and CCPA frameworks.</li>
-                    <li>Integrated Wiz security platform into existing AWS cloud infrastructure.</li>
-                    <li>Engineered Terraform modules to standardize infrastructure deployment across 100+ AWS accounts in multiple regions.</li>
-                    <li>Deployed CI pipelines for automated Aqua container scanning via GitHub Actions and shared workflows.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="fade">
-        <div class="wrap">
-            <p class="section-label">Direct line</p>
-            <h2 class="section-title">Contact</h2>
-            <a href="mailto:om22shree@gmail.com" class="contact-line">
-                <span class="contact-label">Email</span>
-                <span>om22shree@gmail.com</span>
-            </a>
-            <a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener" class="contact-line">
-                <span class="contact-label">LinkedIn</span>
-                <span>linkedin.com/in/om22shree</span>
-            </a>
-            <a href="https://github.com/om22shree" target="_blank" rel="noopener" class="contact-line">
-                <span class="contact-label">GitHub</span>
-                <span>github.com/om22shree</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- WRITING -->
-    <section id="blogs" class="fade">
-        <div class="wrap">
-            <p class="section-label">Field notes</p>
-            <h2 class="section-title">Writing</h2>
-            <div id="blogs-loading">Fetching entries...</div>
-            <div class="blog-list" id="blog-list" style="display:none;"></div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <div class="wrap">
-        <p>Om Shree &mdash; Cloud Platform Engineer &mdash; Bangalore, IN</p>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#experience" onclick="closeMobile()">Experience</a>
+        <a href="#contact" onclick="closeMobile()">Contact</a>
+        <a href="#writing" onclick="closeMobile()">Writing</a>
     </div>
-</footer>
 
-<script>
-    // Mobile nav
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
-    function closeMobile() { mobileNav.classList.remove('open'); }
-    document.addEventListener('click', (e) => {
-        if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) closeMobile();
-    });
+    <main>
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
-            if (!target) return;
-            e.preventDefault();
-            window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
-        });
-    });
+        <!-- HERO -->
+        <section id="hero">
+            <div class="wrap hero-inner">
+                <p class="hero-kicker">Cloud Platform Engineer</p>
+                <h1 class="hero-name">Om<br>Shree</h1>
+                <p class="hero-role">
+                    Distributed systems. Event streaming. AWS & k8s infrastructure.
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Location</span>
+                        <span class="meta-value">Bangalore, IN</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Currently</span>
+                        <span class="meta-value">FICO</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Experience</span>
+                        <span class="meta-value">3 years</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-solid" onclick="downloadResume(this)">Download Resume</button>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                </div>
+            </div>
+        </section>
 
-    // Fade in on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-        });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+        <!-- EXPERIENCE -->
+        <section id="experience" class="fade">
+            <div class="wrap">
+                <p class="section-label">Track record</p>
+                <h2 class="section-title">Experience</h2>
 
-    // Resume download
-    async function downloadResume(btn) {
-        const orig = btn.textContent;
-        try {
-            btn.textContent = 'Fetching...';
-            btn.disabled = true;
-            const url = 'https://raw.githubusercontent.com/om22shree/personal-website/master/resume.pdf';
-            const res = await fetch(url);
-            if (!res.ok) throw new Error();
-            const blob = await res.blob();
-            const link = Object.assign(document.createElement('a'), {
-                href: URL.createObjectURL(blob),
-                download: 'om22shree_Resume.pdf',
-                style: 'display:none'
-            });
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(link.href);
-            btn.textContent = 'Done';
-            setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
-        } catch {
-            btn.textContent = 'Failed — retry';
-            setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2500);
-        }
-    }
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Cloud Engineer I</div>
+                            <div class="exp-org">FICO — Bangalore, IN</div>
+                        </div>
+                        <div class="exp-period">2025-06 — Present</div>
+                    </div>
+                    <div class="exp-highlight">
+                        <strong>Developed distributed multi-region DNS mesh architecture for next-gen platform</strong>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Developed a distributed DNS mesh architecture for FICO's next gen platform using Route53,
+                            Terraform and lambda functions </li>
+                        <li>Migrated FICO AWS Organization structure to integrate with CloudWan network segments for
+                            next-gen platform</li>
+                        <li>Explored and tested AWS DevOps agent for DNS mesh and CWAN networking components to preempt
+                            incidents and reduce MTTR</li>
+                        <li>Development of blue-green deployment of kafka stack with zero downtime and zero data loss
+                        </li>
+                    </ul>
+                </div>
 
-    // Blogs
-    async function loadBlogs() {
-        const loading = document.getElementById('blogs-loading');
-        const list = document.getElementById('blog-list');
-        try {
-            const res = await fetch('https://api.github.com/repos/om22shree/personal-website/contents/blogs?ref=master');
-            const files = await res.json();
-            const mdFiles = files.filter(f => f.type === 'file' && f.name.endsWith('.md'));
-            const blogs = await Promise.all(mdFiles.map(async f => {
-                const r = await fetch(f.download_url);
-                const text = await r.text();
-                const match = text.match(/^#\s+(.+)$/m);
-                return {
-                    title: match ? match[1] : f.name.replace('.md', ''),
-                    url: `https://github.com/om22shree/personal-website/blob/master/blogs/${f.name}`
-                };
-            }));
-            blogs.sort((a, b) => a.title.localeCompare(b.title));
-            if (!blogs.length) { loading.textContent = 'No entries yet.'; return; }
-            loading.style.display = 'none';
-            list.style.display = 'flex';
-            list.innerHTML = blogs.map(b => `
-                <a href="${b.url}" target="_blank" rel="noopener" class="blog-entry">
-                    <span class="blog-name">${b.title}</span>
-                    <span class="blog-arrow">&#8599;</span>
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Cloud Engineer Associate</div>
+                            <div class="exp-org">FICO — Bangalore, IN</div>
+                        </div>
+                        <div class="exp-period">2024-06 — 2025-06</div>
+                    </div>
+                    <div class="exp-highlight">
+                        <strong>$600K+ annual savings</strong> — optimized 10+ Kafka clusters to 99.9% availability,
+                        200ms SLA, 500K+ TPS.
+                    </div>
+                    <ul class="exp-list">
+                        <li>Led induction and technical onboarding for 6 senior engineers with 8+ years of experience
+                            each.</li>
+                        <li>Automated deployment of 30+ Pulsar clusters via ArgoCD, Helm, and GitHub Actions — cut
+                            deployment time from 45+ minutes to under 3 minutes with CP/strong consistency.</li>
+                        <li>Implemented Istio strict mTLS and full observability stack for pulsar clusters using
+                            OpenTelemetry, Grafana, and Prometheus.</li>
+                        <li>Automated DAPR control plane deployment across 30+ EKS clusters with sidecar injection and
+                            configuration management.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Cloud Engineer Intern</div>
+                            <div class="exp-org">FICO — Bangalore, IN</div>
+                        </div>
+                        <div class="exp-period">2023-06 — 2024-06</div>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Conducted security assessments and applied compliance requirements across GDPR, PCI-DSS, CSA
+                            STAR Level 2, and CCPA frameworks.</li>
+                        <li>Integrated Wiz security platform into existing AWS cloud infrastructure.</li>
+                        <li>Engineered Terraform modules to standardize infrastructure deployment across 100+ AWS
+                            accounts in multiple regions.</li>
+                        <li>Deployed CI pipelines for automated Aqua container scanning via GitHub Actions and shared
+                            workflows.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="fade">
+            <div class="wrap">
+                <p class="section-label">Direct line</p>
+                <h2 class="section-title">Contact</h2>
+                <a href="mailto:om22shree@gmail.com" class="contact-line">
+                    <span class="contact-label">Email</span>
+                    <span>om22shree@gmail.com</span>
                 </a>
-            `).join('');
-        } catch {
-            loading.textContent = 'Could not load entries.';
-        }
-    }
+                <a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener" class="contact-line">
+                    <span class="contact-label">LinkedIn</span>
+                    <span>linkedin.com/in/om22shree</span>
+                </a>
+                <a href="https://github.com/om22shree" target="_blank" rel="noopener" class="contact-line">
+                    <span class="contact-label">GitHub</span>
+                    <span>github.com/om22shree</span>
+                </a>
+            </div>
+        </section>
 
-    document.addEventListener('DOMContentLoaded', loadBlogs);
-</script>
+        <!-- WRITING -->
+        <section id="writing" class="fade">
+            <div class="wrap">
+                <p class="section-label">Field notes</p>
+                <h2 class="section-title">Writing</h2>
+                <div class="blog-list">
+                    <a href="#" onclick="downloadFile(event, 'articles/DNS_design.pdf', 'om22shree_DNS_Design.pdf')"
+                        class="blog-entry">
+                        <span class="blog-name">Design & Architecture of a Distributed Multi-Region DNS Mesh</span>
+                        <span class="blog-arrow">&#8599;</span>
+                    </a>
+                    <a href="#"
+                        onclick="downloadFile(event, 'articles/kafka_linux_jvm_tuning.pdf', 'om22shree_Kafka_Linux_JVM_Tuning.pdf')"
+                        class="blog-entry">
+                        <span class="blog-name">Linux and JVM Performance Tuning for Apache Kafka</span>
+                        <span class="blog-arrow">&#8599;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <p>Om Shree &mdash; Cloud Platform Engineer &mdash; Bangalore, IN</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+        function closeMobile() { mobileNav.classList.remove('open'); }
+        document.addEventListener('click', (e) => {
+            if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) closeMobile();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
+            });
+        });
+
+        // Fade in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+        // Resume download
+        async function downloadResume(btn) {
+            const orig = btn.textContent;
+            try {
+                btn.textContent = 'Fetching...';
+                btn.disabled = true;
+                const url = 'https://raw.githubusercontent.com/om22shree/personal-website/master/resume.pdf';
+                const res = await fetch(url);
+                if (!res.ok) throw new Error();
+                const blob = await res.blob();
+                const link = Object.assign(document.createElement('a'), {
+                    href: URL.createObjectURL(blob),
+                    download: 'om22shree_Resume.pdf',
+                    style: 'display:none'
+                });
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(link.href);
+                btn.textContent = 'Done';
+                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+            } catch {
+                btn.textContent = 'Failed — retry';
+                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2500);
+            }
+        }
+
+        // Article download helper
+        async function downloadFile(e, path, filename) {
+            e.preventDefault();
+            const el = e.currentTarget;
+            const arrow = el.querySelector('.blog-arrow');
+            const origArrow = arrow.innerHTML;
+            try {
+                arrow.innerHTML = '&#9203;'; // Hourglass spinner
+                const url = `https://raw.githubusercontent.com/om22shree/personal-website/master/${path}`;
+                const res = await fetch(url);
+                if (!res.ok) throw new Error();
+                const blob = await res.blob();
+                const link = Object.assign(document.createElement('a'), {
+                    href: URL.createObjectURL(blob),
+                    download: filename,
+                    style: 'display:none'
+                });
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(link.href);
+                arrow.innerHTML = '&#10003;'; // Checkmark
+                setTimeout(() => { arrow.innerHTML = origArrow; }, 2000);
+            } catch {
+                arrow.innerHTML = '&#9888;'; // Warning sign
+                setTimeout(() => { arrow.innerHTML = origArrow; }, 2500);
+            }
+        }
+    </script>
 </body>
+
 </html>
