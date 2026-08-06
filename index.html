@@ -5,12 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Shree</title>
-    <meta name="description"
-        content="Cloud Platform Engineer. Distributed systems, event streaming, Kubernetes and AWS infrastructure.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <meta name="description" content="Om Shree — Engineer. Bangalore, IN.">
     <style>
         *,
         *::before,
@@ -22,419 +17,223 @@
 
         :root {
             --bg: #0a0a0a;
-            --bg-raised: #121212;
-            --rule: #262626;
-            --muted: #949494;
-            --body: #e5e5e5;
-            --primary: #ffffff;
-            --accent: #ffffff;
-            --accent-dim: #262626;
+            --rule: #2a2a2a;
+            --muted: #8a8a8a;
+            --body: #d8d8d8;
+            --fg: #ffffff;
         }
 
         html {
-            scroll-behavior: smooth;
             font-size: 18px;
-            /* Scales all rem-based typography proportionally */
         }
 
         body {
-            font-family: 'IBM Plex Mono', monospace;
+            font-family: ui-monospace, "SFMono-Regular", "IBM Plex Mono", "Courier New", Courier, monospace;
             background: var(--bg);
             color: var(--body);
             line-height: 1.7;
             font-size: 16px;
-            /* Base font size */
-            font-weight: 400;
             -webkit-font-smoothing: antialiased;
         }
 
         .wrap {
-            max-width: 860px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
+        }
+
+        a {
+            color: inherit;
         }
 
         /* NAV */
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: var(--bg);
             border-bottom: 1px solid var(--rule);
         }
 
         nav {
-            max-width: 860px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 0 2rem;
-            height: 52px;
+            padding: 1rem 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
         .logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.4rem;
-            letter-spacing: 0.15em;
-            color: var(--primary);
             text-decoration: none;
+            color: var(--fg);
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
         }
 
-        .logo span {
-            color: var(--accent);
+        .logo::before {
+            content: "~/ ";
+            color: var(--muted);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--muted);
             text-decoration: none;
-            font-size: 0.75rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            transition: color 0.15s;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .nav-links a::before {
+            content: "./";
+            color: var(--rule);
         }
 
         .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-            padding: 4px;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 22px;
-            height: 1px;
-            background: var(--body);
-        }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 52px;
-            left: 0;
-            width: 100%;
-            background: var(--bg);
-            border-bottom: 1px solid var(--rule);
-            z-index: 99;
-            padding: 1.5rem 2rem;
-        }
-
-        .mobile-nav.open {
-            display: block;
-        }
-
-        .mobile-nav a {
-            display: block;
-            color: var(--body);
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid var(--rule);
-        }
-
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-nav a:hover {
-            color: var(--accent);
+            color: var(--fg);
         }
 
         /* SECTIONS */
         section {
-            padding: 5rem 0;
+            padding: 3.5rem 0;
             border-top: 1px solid var(--rule);
         }
 
-        .section-label {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 0.7rem;
-            letter-spacing: 0.25em;
-            color: var(--accent);
-            text-transform: uppercase;
-            margin-bottom: 0.4rem;
+        section:first-of-type {
+            border-top: none;
         }
 
-        .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.2rem;
-            letter-spacing: 0.08em;
-            color: var(--primary);
-            line-height: 1;
-            margin-bottom: 3rem;
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-label::before {
+            content: "# ";
         }
 
         /* HERO */
         #hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            border-top: none;
-            padding-top: 52px;
-        }
-
-        .hero-inner {
-            padding: 4rem 0 2rem;
-        }
-
-        .hero-kicker {
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1.2rem;
+            padding-top: 3rem;
+            text-align: center;
         }
 
         .hero-name {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3.5rem, 10vw, 7rem);
-            letter-spacing: 0.05em;
-            color: var(--primary);
-            line-height: 0.9;
-            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            color: var(--fg);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.3rem;
         }
 
         .hero-role {
             font-size: 0.85rem;
-            color: var(--body);
-            max-width: 500px;
-            margin-bottom: 3rem;
-            line-height: 1.9;
-        }
-
-        .hero-meta {
-            display: flex;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .meta-item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-        }
-
-        .meta-label {
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
             color: var(--muted);
+            margin-bottom: 2rem;
         }
 
-        .meta-value {
-            font-size: 0.8rem;
-            color: var(--primary);
+        .hero-role::before {
+            content: "> ";
+        }
+
+        .hero-img-frame {
+            border: 1px solid var(--rule);
+            padding: 0.5rem;
+            display: inline-block;
+            max-width: 100%;
+            margin-bottom: 2rem;
+            background: #111;
+        }
+
+        .hero-img-frame img {
+            display: block;
+            max-width: 100%;
+            width: 420px;
+            height: auto;
         }
 
         .hero-actions {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.72rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
+            font-family: inherit;
+            font-size: 0.78rem;
+            letter-spacing: 0.03em;
             text-decoration: none;
-            padding: 0.65rem 1.4rem;
+            padding: 0.6rem 1.2rem;
             border: 1px solid var(--rule);
             color: var(--body);
             background: transparent;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: border-color 0.15s, color 0.15s;
         }
 
         .btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+            border-color: var(--fg);
+            color: var(--fg);
         }
 
         .btn-solid {
-            background: var(--accent);
-            border-color: var(--accent);
+            background: var(--fg);
+            border-color: var(--fg);
             color: var(--bg);
-            font-weight: 500;
         }
 
         .btn-solid:hover {
             background: transparent;
-            color: var(--accent);
+            color: var(--fg);
         }
 
-        /* EXPERIENCE */
-        .exp-entry {
-            padding: 2.5rem 0;
-            border-top: 1px solid var(--rule);
-        }
-
-        .exp-entry:first-child {
-            border-top: none;
-        }
-
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .exp-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.3rem;
-            letter-spacing: 0.08em;
-            color: var(--primary);
-        }
-
-        .exp-org {
-            font-size: 0.75rem;
-            letter-spacing: 0.08em;
-            color: var(--accent);
-            margin-top: 0.2rem;
-        }
-
-        .exp-period {
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
-            color: var(--muted);
-            white-space: nowrap;
-            margin-top: 0.3rem;
-        }
-
-        .exp-highlight {
-            background: rgba(255, 255, 255, 0.04);
-            border-left: 2px solid var(--accent);
-            padding: 0.8rem 1.2rem;
-            margin-bottom: 1.2rem;
-            font-size: 0.78rem;
-            color: var(--body);
-        }
-
-        .exp-highlight strong {
-            color: var(--accent);
-        }
-
-        .exp-list {
+        /* NOW LIST */
+        .now-list {
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
         }
 
-        .exp-list li {
+        .now-list li {
             padding-left: 1.4rem;
             position: relative;
-            font-size: 0.78rem;
+            font-size: 0.9rem;
             color: var(--body);
-            line-height: 1.75;
+            margin-bottom: 1rem;
         }
 
-        .exp-list li::before {
-            content: '—';
+        .now-list li::before {
+            content: ">";
             position: absolute;
             left: 0;
             color: var(--muted);
         }
 
-        /* CONTACT */
-        .contact-line {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            padding: 1.1rem 0;
-            border-bottom: 1px solid var(--rule);
-            text-decoration: none;
-            color: var(--body);
-            font-size: 0.8rem;
-            transition: color 0.15s;
-        }
-
-        .contact-line:first-child {
+        /* WRITING */
+        .writing-entry {
+            padding: 1.6rem 0;
             border-top: 1px solid var(--rule);
         }
 
-        .contact-line:hover {
-            color: var(--accent);
+        .writing-entry:first-child {
+            border-top: none;
+            padding-top: 0;
         }
 
-        .contact-label {
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
+        .writing-title {
+            font-size: 0.95rem;
+            color: var(--fg);
+            margin-bottom: 0.5rem;
+        }
+
+        .writing-desc {
+            font-size: 0.85rem;
             color: var(--muted);
-            width: 70px;
-            flex-shrink: 0;
-        }
-
-        /* BLOGS */
-        #blogs-loading {
-            color: var(--muted);
-            font-size: 0.75rem;
-            letter-spacing: 0.08em;
-        }
-
-        .blog-list {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .blog-entry {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 1.1rem 0;
-            border-bottom: 1px solid var(--rule);
-            text-decoration: none;
-            color: var(--body);
-            transition: color 0.15s;
-        }
-
-        .blog-entry:first-child {
-            border-top: 1px solid var(--rule);
-        }
-
-        .blog-entry:hover {
-            color: var(--primary);
-        }
-
-        .blog-entry:hover .blog-arrow {
-            color: var(--accent);
-            transform: translateX(4px);
-        }
-
-        .blog-name {
-            font-size: 0.82rem;
-            flex: 1;
-        }
-
-        .blog-arrow {
-            font-size: 0.75rem;
-            color: var(--muted);
-            transition: all 0.15s;
-            flex-shrink: 0;
+            margin-bottom: 1rem;
+            max-width: 520px;
         }
 
         /* FOOTER */
@@ -443,67 +242,44 @@
             padding: 2rem 0;
         }
 
+        footer .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1.5rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         footer p {
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
+            font-size: 0.75rem;
             color: var(--muted);
         }
 
-        /* FADE IN */
-        .fade {
-            opacity: 0;
-            transform: translateY(16px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+        .footer-links {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
         }
 
-        .fade.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .footer-links a {
+            text-decoration: none;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--fg);
         }
 
         /* RESPONSIVE */
-        @media (max-width: 640px) {
-            .nav-links {
-                display: none;
+        @media (max-width: 560px) {
+            .hero-img-frame img {
+                width: 100%;
             }
 
-            .hamburger {
-                display: flex;
-            }
-
-            .hero-name {
-                font-size: 3.2rem;
-            }
-
-            .hero-meta {
-                gap: 1.5rem;
-            }
-
-            .exp-header {
+            footer .wrap {
                 flex-direction: column;
-                gap: 0.3rem;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-            }
-
-            .btn {
-                text-align: center;
-            }
-
-            .blog-entry {
-                flex-direction: column;
-                gap: 0.2rem;
-            }
-
-            .blog-arrow {
-                display: none;
-            }
-
-            .contact-label {
-                width: 55px;
-                font-size: 0.6rem;
+                align-items: flex-start;
             }
         }
     </style>
@@ -513,166 +289,63 @@
 
     <header>
         <nav>
-            <a href="#hero" class="logo">Om<span>.</span>Shree</a>
+            <a href="#hero" class="logo">om-shree</a>
             <ul class="nav-links">
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#writing">Writing</a></li>
+                <li><a href="#now">now</a></li>
+                <li><a href="#writing">writing</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
         </nav>
     </header>
-
-    <div class="mobile-nav" id="mobileNav">
-        <a href="#experience" onclick="closeMobile()">Experience</a>
-        <a href="#contact" onclick="closeMobile()">Contact</a>
-        <a href="#writing" onclick="closeMobile()">Writing</a>
-    </div>
 
     <main>
 
         <!-- HERO -->
         <section id="hero">
-            <div class="wrap hero-inner">
-                <p class="hero-kicker">Cloud Platform Engineer</p>
-                <h1 class="hero-name">Om<br>Shree</h1>
-                <p class="hero-role">
-                    Distributed systems. Event streaming. AWS & k8s infrastructure.
-                </p>
-                <div class="hero-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">Location</span>
-                        <span class="meta-value">Bangalore, IN</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Currently</span>
-                        <span class="meta-value">FICO</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Experience</span>
-                        <span class="meta-value">3 years</span>
-                    </div>
+            <div class="wrap">
+                <p class="hero-name">Om Shree</p>
+                <p class="hero-role">Cloud Platform Engineer, Bangalore IN</p>
+
+                <div class="hero-img-frame">
+                    <img src="hero.png" alt="Illustration" width="1000" height="792" loading="eager">
                 </div>
+
                 <div class="hero-actions">
                     <button class="btn btn-solid" onclick="downloadResume(this)">Download Resume</button>
-                    <a href="#contact" class="btn">Get in Touch</a>
+                    <a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener" class="btn">LinkedIn
+                        &#8599;</a>
                 </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE -->
-        <section id="experience" class="fade">
+        <!-- NOW -->
+        <section id="now">
             <div class="wrap">
-                <p class="section-label">Track record</p>
-                <h2 class="section-title">Experience</h2>
-
-                <div class="exp-entry">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Cloud Engineer I</div>
-                            <div class="exp-org">FICO — Bangalore, IN</div>
-                        </div>
-                        <div class="exp-period">2025-06 — Present</div>
-                    </div>
-                    <div class="exp-highlight">
-                        <strong>Developed distributed multi-region DNS mesh architecture for next-gen platform</strong>
-                    </div>
-                    <ul class="exp-list">
-                        <li>Developed a distributed DNS mesh architecture for FICO's next gen platform using Route53,
-                            Terraform and lambda functions </li>
-                        <li>Migrated FICO AWS Organization structure to integrate with CloudWan network segments for
-                            next-gen platform</li>
-                        <li>Explored and tested AWS DevOps agent for DNS mesh and CWAN networking components to preempt
-                            incidents and reduce MTTR</li>
-                        <li>Development of blue-green deployment of kafka stack with zero downtime and zero data loss
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="exp-entry">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Cloud Engineer Associate</div>
-                            <div class="exp-org">FICO — Bangalore, IN</div>
-                        </div>
-                        <div class="exp-period">2024-06 — 2025-06</div>
-                    </div>
-                    <div class="exp-highlight">
-                        <strong>$600K+ annual savings</strong> — optimized 10+ Kafka clusters to 99.9% availability,
-                        200ms SLA, 500K+ TPS.
-                    </div>
-                    <ul class="exp-list">
-                        <li>Led induction and technical onboarding for 6 senior engineers with 8+ years of experience
-                            each.</li>
-                        <li>Automated deployment of 30+ Pulsar clusters via ArgoCD, Helm, and GitHub Actions — cut
-                            deployment time from 45+ minutes to under 3 minutes with CP/strong consistency.</li>
-                        <li>Implemented Istio strict mTLS and full observability stack for pulsar clusters using
-                            OpenTelemetry, Grafana, and Prometheus.</li>
-                        <li>Automated DAPR control plane deployment across 30+ EKS clusters with sidecar injection and
-                            configuration management.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-entry">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Cloud Engineer Intern</div>
-                            <div class="exp-org">FICO — Bangalore, IN</div>
-                        </div>
-                        <div class="exp-period">2023-06 — 2024-06</div>
-                    </div>
-                    <ul class="exp-list">
-                        <li>Conducted security assessments and applied compliance requirements across GDPR, PCI-DSS, CSA
-                            STAR Level 2, and CCPA frameworks.</li>
-                        <li>Integrated Wiz security platform into existing AWS cloud infrastructure.</li>
-                        <li>Engineered Terraform modules to standardize infrastructure deployment across 100+ AWS
-                            accounts in multiple regions.</li>
-                        <li>Deployed CI pipelines for automated Aqua container scanning via GitHub Actions and shared
-                            workflows.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="fade">
-            <div class="wrap">
-                <p class="section-label">Direct line</p>
-                <h2 class="section-title">Contact</h2>
-                <a href="mailto:om22shree@gmail.com" class="contact-line">
-                    <span class="contact-label">Email</span>
-                    <span>om22shree@gmail.com</span>
-                </a>
-                <a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener" class="contact-line">
-                    <span class="contact-label">LinkedIn</span>
-                    <span>linkedin.com/in/om22shree</span>
-                </a>
-                <a href="https://github.com/om22shree" target="_blank" rel="noopener" class="contact-line">
-                    <span class="contact-label">GitHub</span>
-                    <span>github.com/om22shree</span>
-                </a>
+                <p class="section-label">what i'm up to these days</p>
+                <ul class="now-list">
+                    <li>Grinding LeetCode toward 1000+ solved</li>
+                    <li>Having a full-blown mid-life crisis, introspecting my career &amp; life priorities</li>
+                    <li>Confused between C++ &amp; Go for my next project</li>
+                </ul>
             </div>
         </section>
 
         <!-- WRITING -->
-        <section id="writing" class="fade">
+        <section id="writing">
             <div class="wrap">
-                <p class="section-label">Field notes</p>
-                <h2 class="section-title">Writing</h2>
-                <div class="blog-list">
-                    <a href="#" onclick="downloadFile(event, 'articles/DNS_design.pdf', 'om22shree_DNS_Design.pdf')"
-                        class="blog-entry">
-                        <span class="blog-name">Design & Architecture of a Distributed Multi-Region DNS Mesh</span>
-                        <span class="blog-arrow">&#8599;</span>
-                    </a>
-                    <a href="#"
-                        onclick="downloadFile(event, 'articles/kafka_linux_jvm_tuning.pdf', 'om22shree_Kafka_Linux_JVM_Tuning.pdf')"
-                        class="blog-entry">
-                        <span class="blog-name">Linux and JVM Performance Tuning for Apache Kafka</span>
-                        <span class="blog-arrow">&#8599;</span>
-                    </a>
+                <p class="section-label">writing &amp; research</p>
+
+                <div class="writing-entry">
+                    <p class="writing-title">Design &amp; Architecture of a Distributed Multi-Region DNS Mesh</p>
+                    <p class="writing-desc">A breakdown of building a multi-region DNS mesh on Route53, Terraform,
+                        &amp; Lambda — covering failover design &amp; the tradeoffs behind the routing architecture.</p>
+                    <button class="btn" onclick="downloadFile(event, this, 'articles/DNS_design.pdf', 'om22shree_DNS_Design.pdf')">Download PDF</button>
+                </div>
+
+                <div class="writing-entry">
+                    <p class="writing-title">Linux &amp; JVM Performance Tuning for Apache Kafka</p>
+                    <p class="writing-desc">Notes on tuning Kafka clusters at the OS &amp; JVM level — GC behavior,
+                        page cache pressure, &amp; the changes that actually moved throughput &amp; latency.</p>
+                    <button class="btn" onclick="downloadFile(event, this, 'articles/kafka_linux_jvm_tuning.pdf', 'om22shree_Kafka_Linux_JVM_Tuning.pdf')">Download PDF</button>
                 </div>
             </div>
         </section>
@@ -681,92 +354,63 @@
 
     <footer>
         <div class="wrap">
-            <p>Om Shree &mdash; Cloud Platform Engineer &mdash; Bangalore, IN</p>
+            <p>Om Shree &mdash; Bangalore, IN</p>
+            <ul class="footer-links">
+                <li><a href="mailto:om22shree@gmail.com">Email</a></li>
+                <li><a href="https://github.com/om22shree" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
         </div>
     </footer>
 
     <script>
-        // Mobile nav
-        const hamburger = document.getElementById('hamburger');
-        const mobileNav = document.getElementById('mobileNav');
-        hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
-        function closeMobile() { mobileNav.classList.remove('open'); }
-        document.addEventListener('click', (e) => {
-            if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) closeMobile();
-        });
+        const REPO_RAW = 'https://raw.githubusercontent.com/om22shree/personal-website/master/';
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const target = document.querySelector(a.getAttribute('href'));
-                if (!target) return;
-                e.preventDefault();
-                window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
-            });
-        });
-
-        // Fade in on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-            });
-        }, { threshold: 0.08 });
-        document.querySelectorAll('.fade').forEach(el => observer.observe(el));
-
-        // Resume download
         async function downloadResume(btn) {
             const orig = btn.textContent;
             try {
                 btn.textContent = 'Fetching...';
                 btn.disabled = true;
-                const url = 'https://raw.githubusercontent.com/om22shree/personal-website/master/resume.pdf';
-                const res = await fetch(url);
+                const res = await fetch(REPO_RAW + 'resume.pdf');
                 if (!res.ok) throw new Error();
                 const blob = await res.blob();
-                const link = Object.assign(document.createElement('a'), {
-                    href: URL.createObjectURL(blob),
-                    download: 'om22shree_Resume.pdf',
-                    style: 'display:none'
-                });
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                URL.revokeObjectURL(link.href);
+                triggerDownload(blob, 'om22shree_Resume.pdf');
                 btn.textContent = 'Done';
-                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
             } catch {
                 btn.textContent = 'Failed — retry';
-                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2500);
+            } finally {
+                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
             }
         }
 
-        // Article download helper
-        async function downloadFile(e, path, filename) {
+        async function downloadFile(e, btn, path, filename) {
             e.preventDefault();
-            const el = e.currentTarget;
-            const arrow = el.querySelector('.blog-arrow');
-            const origArrow = arrow.innerHTML;
+            const orig = btn.textContent;
             try {
-                arrow.innerHTML = '&#9203;'; // Hourglass spinner
-                const url = `https://raw.githubusercontent.com/om22shree/personal-website/master/${path}`;
-                const res = await fetch(url);
+                btn.textContent = 'Fetching...';
+                btn.disabled = true;
+                const res = await fetch(REPO_RAW + path);
                 if (!res.ok) throw new Error();
                 const blob = await res.blob();
-                const link = Object.assign(document.createElement('a'), {
-                    href: URL.createObjectURL(blob),
-                    download: filename,
-                    style: 'display:none'
-                });
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                URL.revokeObjectURL(link.href);
-                arrow.innerHTML = '&#10003;'; // Checkmark
-                setTimeout(() => { arrow.innerHTML = origArrow; }, 2000);
+                triggerDownload(blob, filename);
+                btn.textContent = 'Done';
             } catch {
-                arrow.innerHTML = '&#9888;'; // Warning sign
-                setTimeout(() => { arrow.innerHTML = origArrow; }, 2500);
+                btn.textContent = 'Failed — retry';
+            } finally {
+                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
             }
+        }
+
+        function triggerDownload(blob, filename) {
+            const link = Object.assign(document.createElement('a'), {
+                href: URL.createObjectURL(blob),
+                download: filename,
+                style: 'display:none'
+            });
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
         }
     </script>
 </body>
