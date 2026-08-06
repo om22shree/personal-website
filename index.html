@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om Shree</title>
-    <meta name="description" content="Om Shree — Engineer">
+    <title>om shree</title>
+    <meta name="description" content="om shree — engineer">
     <style>
         *,
         *::before,
@@ -302,16 +302,16 @@
         <!-- HERO -->
         <section id="hero">
             <div class="wrap">
-                <p class="hero-name">Om Shree</p>
-                <p class="hero-role">Depresso Espresso Engineer, WWW, Earth</p>
+                <p class="hero-name">om shree</p>
+                <p class="hero-role">depresso espresso engineer, www, earth</p>
 
                 <div class="hero-img-frame">
-                    <img src="hero.png" alt="Illustration" width="1000" height="792" loading="eager">
+                    <img src="hero.png" alt="illustration" width="1000" height="792" loading="eager">
                 </div>
 
                 <div class="hero-actions">
-                    <button class="btn btn-solid" onclick="downloadResume(this)">Download Resume</button>
-                    <a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener" class="btn">LinkedIn
+                    <button class="btn btn-solid" onclick="downloadResume(this)">download resume</button>
+                    <a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener" class="btn">linkedin
                         &#8599;</a>
                 </div>
             </div>
@@ -322,9 +322,9 @@
             <div class="wrap">
                 <p class="section-label">what i'm up to these days</p>
                 <ul class="now-list">
-                    <li>Grinding LeetCode toward 1000+ solved</li>
-                    <li>Having a full-blown mid-life crisis; introspecting my career &amp; life priorities</li>
-                    <li>Confused between C++ &amp; Go for my next project</li>
+                    <li>grinding leetcode toward 1000+ solved</li>
+                    <li>having a full-blown mid-life crisis; introspecting my career &amp; life priorities</li>
+                    <li>confused between c++ &amp; go for my next project</li>
                 </ul>
             </div>
         </section>
@@ -335,17 +335,17 @@
                 <p class="section-label">writing &amp; research</p>
 
                 <div class="writing-entry">
-                    <p class="writing-title">Design &amp; Architecture of a Distributed Multi-Region DNS Mesh</p>
-                    <p class="writing-desc">A breakdown of building a multi-region DNS mesh on Route53, Terraform,
-                        &amp; Lambda — covering failover design &amp; the tradeoffs behind the routing architecture.</p>
-                    <button class="btn" onclick="downloadFile(event, this, 'articles/DNS_design.pdf', 'om22shree_DNS_Design.pdf')">Download PDF</button>
+                    <p class="writing-title">design &amp; architecture of a distributed multi-region dns mesh</p>
+                    <p class="writing-desc">a breakdown of building a multi-region dns mesh on route53, terraform,
+                        &amp; lambda — covering failover design &amp; the tradeoffs behind the routing architecture.</p>
+                    <button class="btn" onclick="downloadFile(event, this, 'articles/DNS_design.pdf', 'om22shree_dns_design.pdf')">download pdf</button>
                 </div>
 
                 <div class="writing-entry">
-                    <p class="writing-title">Linux &amp; JVM Performance Tuning for Apache Kafka</p>
-                    <p class="writing-desc">Notes on tuning Kafka clusters at the OS &amp; JVM level — GC behavior,
+                    <p class="writing-title">linux &amp; jvm performance tuning for apache kafka</p>
+                    <p class="writing-desc">notes on tuning kafka clusters at the os &amp; jvm level — gc behavior,
                         page cache pressure, &amp; the changes that actually moved throughput &amp; latency.</p>
-                    <button class="btn" onclick="downloadFile(event, this, 'articles/kafka_linux_jvm_tuning.pdf', 'om22shree_Kafka_Linux_JVM_Tuning.pdf')">Download PDF</button>
+                    <button class="btn" onclick="downloadFile(event, this, 'articles/kafka_linux_jvm_tuning.pdf', 'om22shree_kafka_linux_jvm_tuning.pdf')">download pdf</button>
                 </div>
             </div>
         </section>
@@ -354,11 +354,11 @@
 
     <footer>
         <div class="wrap">
-            <p>Om Shree &mdash; WorldWide beach bum</p>
+            <p>om shree &mdash; happy beach bum</p>
             <ul class="footer-links">
-                <li><a href="mailto:om22shree@gmail.com">Email</a></li>
-                <li><a href="https://github.com/om22shree" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="mailto:om22shree@gmail.com">email</a></li>
+                <li><a href="https://github.com/om22shree" target="_blank" rel="noopener">github</a></li>
+                <li><a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener">linkedin</a></li>
             </ul>
         </div>
     </footer>
@@ -369,15 +369,15 @@
         async function downloadResume(btn) {
             const orig = btn.textContent;
             try {
-                btn.textContent = 'Fetching...';
+                btn.textContent = 'fetching...';
                 btn.disabled = true;
                 const res = await fetch(REPO_RAW + 'resume.pdf');
                 if (!res.ok) throw new Error();
                 const blob = await res.blob();
-                triggerDownload(blob, 'om22shree_Resume.pdf');
-                btn.textContent = 'Done';
+                triggerDownload(blob, 'om22shree_resume.pdf');
+                btn.textContent = 'done';
             } catch {
-                btn.textContent = 'Failed — retry';
+                btn.textContent = 'failed — retry';
             } finally {
                 setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
             }
@@ -387,15 +387,15 @@
             e.preventDefault();
             const orig = btn.textContent;
             try {
-                btn.textContent = 'Fetching...';
+                btn.textContent = 'fetching...';
                 btn.disabled = true;
                 const res = await fetch(REPO_RAW + path);
                 if (!res.ok) throw new Error();
                 const blob = await res.blob();
                 triggerDownload(blob, filename);
-                btn.textContent = 'Done';
+                btn.textContent = 'done';
             } catch {
-                btn.textContent = 'Failed — retry';
+                btn.textContent = 'failed — retry';
             } finally {
                 setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
             }
