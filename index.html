@@ -1,367 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>om shree</title>
-    <meta name="description" content="om shree — engineer">
     <style>
-        *,
-        *::before,
-        *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --bg: #0a0a0a;
-            --rule: #2a2a2a;
-            --muted: #8a8a8a;
-            --body: #d8d8d8;
-            --fg: #ffffff;
-        }
-
-        html {
-            font-size: 18px;
-        }
-
         body {
-            font-family: ui-monospace, "SFMono-Regular", "IBM Plex Mono", "Courier New", Courier, monospace;
-            background: var(--bg);
-            color: var(--body);
-            line-height: 1.7;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .wrap {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        /* NAV */
-        header {
-            border-bottom: 1px solid var(--rule);
-        }
-
-        nav {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
+            background: #0b0b0b;
+            color: #e8e8e8;
+            font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Courier New", monospace;
+            font-size: 15px;
+            line-height: 1.75;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.75rem;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+            min-height: 100vh;
         }
 
-        .logo {
-            text-decoration: none;
-            color: var(--fg);
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
+        .container {
+            max-width: 700px;
+            width: 100%;
+            padding-top: 0.5rem;
         }
 
-        .logo::before {
-            content: "~/ ";
-            color: var(--muted);
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 450;
+            color: #f0f0f0;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.1rem;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--muted);
-            font-size: 0.8rem;
-        }
-
-        .nav-links a::before {
-            content: "./";
-            color: var(--rule);
-        }
-
-        .nav-links a:hover {
-            color: var(--fg);
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 3.5rem 0;
-            border-top: 1px solid var(--rule);
-        }
-
-        section:first-of-type {
-            border-top: none;
-        }
-
-        .section-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
-            color: var(--muted);
+        .role {
+            font-size: 0.95rem;
+            color: #7bcb7b;
             margin-bottom: 1.5rem;
         }
 
-        .section-label::before {
-            content: "# ";
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #f0f0f0;
+            margin: 2rem 0 0.5rem 0;
+            border-bottom: 1px solid #222;
+            padding-bottom: 0.2rem;
         }
 
-        /* HERO */
-        #hero {
-            padding-top: 3rem;
+        .figure {
+            margin: 1.2rem 0 1.5rem 0;
             text-align: center;
         }
-
-        .hero-name {
-            font-size: 1.4rem;
-            color: var(--fg);
-            letter-spacing: 0.02em;
-            margin-bottom: 0.3rem;
-        }
-
-        .hero-role {
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-bottom: 2rem;
-        }
-
-        .hero-role::before {
-            content: "> ";
-        }
-
-        .hero-img-frame {
-            border: 1px solid var(--rule);
-            padding: 0.5rem;
-            display: inline-block;
+        .figure img {
             max-width: 100%;
-            margin-bottom: 2rem;
-            background: #111;
-        }
-
-        .hero-img-frame img {
-            display: block;
-            max-width: 100%;
-            width: 420px;
             height: auto;
+            border: 1px solid #2a2a2a;
+            padding: 4px;
+            background: #0e0e0e;
+            display: inline-block;
         }
 
-        .hero-actions {
+        .actions {
             display: flex;
-            gap: 0.75rem;
-            justify-content: center;
+            gap: 0.6rem;
             flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
 
         .btn {
-            display: inline-block;
             font-family: inherit;
-            font-size: 0.78rem;
-            letter-spacing: 0.03em;
-            text-decoration: none;
-            padding: 0.6rem 1.2rem;
-            border: 1px solid var(--rule);
-            color: var(--body);
+            font-size: 0.75rem;
             background: transparent;
+            color: #7bcb7b;
+            border: 1px solid #7bcb7b;
+            padding: 0.35rem 1.2rem;
             cursor: pointer;
-            transition: border-color 0.15s, color 0.15s;
+            transition: 0.15s;
+            text-decoration: none;
+            display: inline-block;
         }
-
         .btn:hover {
-            border-color: var(--fg);
-            color: var(--fg);
+            border-color: #aaddaa;
+            color: #aaddaa;
         }
 
-        .btn-solid {
-            background: var(--fg);
-            border-color: var(--fg);
-            color: var(--bg);
+        .btn-primary {
+            background: #7bcb7b;
+            border-color: #7bcb7b;
+            color: #0b0b0b;
         }
-
-        .btn-solid:hover {
+        .btn-primary:hover {
             background: transparent;
-            color: var(--fg);
+            color: #7bcb7b;
         }
 
-        /* NOW LIST */
-        .now-list {
+        ul {
             list-style: none;
+            padding-left: 0;
         }
-
-        .now-list li {
-            padding-left: 1.4rem;
+        ul li {
+            padding-left: 1.2rem;
             position: relative;
-            font-size: 0.9rem;
-            color: var(--body);
-            margin-bottom: 1rem;
+            color: #e8e8e8;
+            margin-bottom: 0.25rem;
         }
-
-        .now-list li::before {
-            content: ">";
+        ul li::before {
+            content: "-";
             position: absolute;
             left: 0;
-            color: var(--muted);
+            color: #555;
+        }
+        ul li .highlight {
+            color: #e5c07b;
         }
 
-        /* WRITING */
-        .writing-entry {
-            padding: 1.6rem 0;
-            border-top: 1px solid var(--rule);
+        /* ── BLOOD FOR THE BLOOD GOD ── */
+        .blood {
+            color: #cc2233;
         }
 
-        .writing-entry:first-child {
+        .entry {
+            padding: 1.2rem 0;
+            border-top: 1px solid #1e1e1e;
+        }
+        .entry:first-of-type {
             border-top: none;
-            padding-top: 0;
+            padding-top: 0.2rem;
         }
-
-        .writing-title {
+        .entry-title {
             font-size: 0.95rem;
-            color: var(--fg);
-            margin-bottom: 0.5rem;
+            color: #f0f0f0;
+            margin-bottom: 0.15rem;
         }
-
-        .writing-desc {
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-bottom: 1rem;
+        .entry-desc {
+            font-size: 0.82rem;
+            color: #9a9a9a;
+            margin-bottom: 0.5rem;
             max-width: 520px;
         }
-
-        /* FOOTER */
-        footer {
-            border-top: 1px solid var(--rule);
-            padding: 2rem 0;
+        .entry .btn {
+            font-size: 0.7rem;
+            padding: 0.15rem 1rem;
+            color: #7bcb7b;
+            border-color: #2a4a2a;
+        }
+        .entry .btn:hover {
+            color: #aaddaa;
+            border-color: #7bcb7b;
         }
 
-        footer .wrap {
+        .footer {
+            border-top: 1px solid #1e1e1e;
+            margin-top: 2.5rem;
+            padding-top: 1.2rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem 1.5rem;
             justify-content: space-between;
             align-items: center;
+            gap: 0.5rem;
         }
-
-        footer p {
-            font-size: 0.75rem;
-            color: var(--muted);
+        .footer p {
+            font-size: 0.7rem;
+            color: #7bcb7b;
         }
-
         .footer-links {
             display: flex;
             gap: 1.2rem;
             list-style: none;
+            padding-left: 0;
         }
-
+        .footer-links li {
+            padding-left: 0;
+        }
+        .footer-links li::before {
+            content: none;
+        }
         .footer-links a {
+            color: #7bcb7b;
             text-decoration: none;
-            font-size: 0.75rem;
-            color: var(--muted);
+            font-size: 0.7rem;
         }
-
         .footer-links a:hover {
-            color: var(--fg);
+            color: #aaddaa;
+            text-decoration: underline;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 560px) {
-            .hero-img-frame img {
-                width: 100%;
+        @media (max-width: 520px) {
+            body {
+                padding: 1.5rem 1rem;
             }
-
-            footer .wrap {
+            .footer {
                 flex-direction: column;
                 align-items: flex-start;
             }
         }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <nav>
-            <a href="#hero" class="logo">om-shree</a>
-            <ul class="nav-links">
-                <li><a href="#now">now</a></li>
-                <li><a href="#writing">writing</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
 
-    <main>
+        <h1>om shree</h1>
+        <p class="role">engineer – <span class="blood">Terra</span></p>
 
-        <!-- HERO -->
-        <section id="hero">
-            <div class="wrap">
-                <p class="hero-name">om shree</p>
-                <p class="hero-role">engineer, earth</p>
+        <div class="figure">
+            <img src="hero.png" alt="om shree" width="1000" height="792" loading="eager" />
+        </div>
 
-                <div class="hero-img-frame">
-                    <img src="hero.png" alt="illustration" width="1000" height="792" loading="eager">
-                </div>
+        <div class="actions">
+            <button class="btn btn-primary" onclick="downloadResume(this)">download resume</button>
+            <a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener" class="btn">linkedin →</a>
+        </div>
 
-                <div class="hero-actions">
-                    <button class="btn btn-solid" onclick="downloadResume(this)">download resume</button>
-                    <a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener" class="btn">linkedin
-                        &#8599;</a>
-                </div>
-            </div>
-        </section>
+        <div class="section-title"># now</div>
+        <ul>
+            <li>grinding leetcode toward <span class="highlight">1000+</span> solved; <span class="blood">Emperor protects</span></li>
+            <li>suffering from existential dread and having a full-blown mid-life crisis; <span class="blood">questioning my conviction in the Codex Astartes</span></li>
+            <li>trying to become a <span class="highlight">go</span> <span class="blood">custodian</span></li>
+        </ul>
 
-        <!-- NOW -->
-        <section id="now">
-            <div class="wrap">
-                <p class="section-label">era</p>
-                <ul class="now-list">
-                    <li>grinding leetcode toward 1000+ solved</li>
-                    <li>having a full-blown mid-life crisis; introspecting my career &amp; life priorities</li>
-                    <li>confused between c++ &amp; go for my next project</li>
-                </ul>
-            </div>
-        </section>
+        <div class="section-title"># writing</div>
 
-        <!-- WRITING -->
-        <section id="writing">
-            <div class="wrap">
-                <p class="section-label">takes</p>
+        <div class="entry">
+            <div class="entry-title">design &amp; architecture of a distributed multi-region dns mesh</div>
+            <div class="entry-desc">a breakdown of building a multi-region dns mesh on route53, terraform, &amp; lambda — covering failover design &amp; the tradeoffs behind the routing architecture.</div>
+            <button class="btn" onclick="downloadFile(event, this, 'articles/DNS_design.pdf', 'om22shree_dns_design.pdf')">download pdf</button>
+        </div>
 
-                <div class="writing-entry">
-                    <p class="writing-title">design &amp; architecture of a distributed multi-region dns mesh</p>
-                    <p class="writing-desc">a breakdown of building a multi-region dns mesh on route53, terraform,
-                        &amp; lambda — covering failover design &amp; the tradeoffs behind the routing architecture.</p>
-                    <button class="btn" onclick="downloadFile(event, this, 'articles/DNS_design.pdf', 'om22shree_dns_design.pdf')">download pdf</button>
-                </div>
+        <div class="entry">
+            <div class="entry-title">linux &amp; jvm performance tuning for apache kafka</div>
+            <div class="entry-desc">notes on tuning kafka clusters at the os &amp; jvm level — gc behavior, page cache pressure, &amp; the changes that actually moved throughput &amp; latency.</div>
+            <button class="btn" onclick="downloadFile(event, this, 'articles/kafka_linux_jvm_tuning.pdf', 'om22shree_kafka_linux_jvm_tuning.pdf')">download pdf</button>
+        </div>
 
-                <div class="writing-entry">
-                    <p class="writing-title">linux &amp; jvm performance tuning for apache kafka</p>
-                    <p class="writing-desc">notes on tuning kafka clusters at the os &amp; jvm level — gc behavior,
-                        page cache pressure, &amp; the changes that actually moved throughput &amp; latency.</p>
-                    <button class="btn" onclick="downloadFile(event, this, 'articles/kafka_linux_jvm_tuning.pdf', 'om22shree_kafka_linux_jvm_tuning.pdf')">download pdf</button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="wrap">
-            <p>divine vibes</p>
+        <div class="footer">
+            <p>divine vibes · <span class="blood">for the Emperor</span></p>
             <ul class="footer-links">
                 <li><a href="mailto:om22shree@gmail.com">email</a></li>
                 <li><a href="https://github.com/om22shree" target="_blank" rel="noopener">github</a></li>
                 <li><a href="https://linkedin.com/in/om22shree" target="_blank" rel="noopener">linkedin</a></li>
             </ul>
         </div>
-    </footer>
+
+    </div>
 
     <script>
         const REPO_RAW = 'https://raw.githubusercontent.com/om22shree/personal-website/master/';
@@ -377,9 +263,9 @@
                 triggerDownload(blob, 'om22shree_resume.pdf');
                 btn.textContent = 'done';
             } catch {
-                btn.textContent = 'failed — retry';
+                btn.textContent = 'retry';
             } finally {
-                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1800);
             }
         }
 
@@ -395,24 +281,23 @@
                 triggerDownload(blob, filename);
                 btn.textContent = 'done';
             } catch {
-                btn.textContent = 'failed — retry';
+                btn.textContent = 'retry';
             } finally {
-                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+                setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1800);
             }
         }
 
         function triggerDownload(blob, filename) {
-            const link = Object.assign(document.createElement('a'), {
-                href: URL.createObjectURL(blob),
-                download: filename,
-                style: 'display:none'
-            });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
             URL.revokeObjectURL(link.href);
         }
     </script>
-</body>
 
+</body>
 </html>
