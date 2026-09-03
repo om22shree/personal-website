@@ -8,15 +8,15 @@
 
 `Counter`
 
-- [ ] **#242** [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
-- [ ] **#347** [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
-- [ ] **#169** [Majority Element](https://leetcode.com/problems/majority-element/)
-- [ ] **#387** [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
-- [ ] **#3005** [Count Elements With Max Frequency](https://leetcode.com/problems/count-elements-with-maximum-frequency/)
-- [ ] **#451** [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/)
-- [ ] **#136** [Single Number](https://leetcode.com/problems/single-number/)
-- [ ] **#819** [Most Common Word](https://leetcode.com/problems/most-common-word/)
-- [ ] **#1207** [Unique Number of Occurrences](https://leetcode.com/problems/unique-number-of-occurrences/)
+- [x] **#242** [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+- [x] **#347** [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
+- [x] **#169** [Majority Element](https://leetcode.com/problems/majority-element/)
+- [x] **#387** [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
+- [x] **#3005** [Count Elements With Max Frequency](https://leetcode.com/problems/count-elements-with-maximum-frequency/)
+- [x] **#451** [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/)
+- [x] **#136** [Single Number](https://leetcode.com/problems/single-number/)
+- [x] **#819** [Most Common Word](https://leetcode.com/problems/most-common-word/)
+- [x] **#1207** [Unique Number of Occurrences](https://leetcode.com/problems/unique-number-of-occurrences/)
 - [ ] **#350** [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/)
 
 ## 2. defaultdict (Grouping & Adjacency)
