@@ -4,14 +4,6 @@
 
 ## How to use this file
 
-Do **not** race through all 520 once. Your goal is recognition + reconstruction, not green-checkmark collection.
-
-### The 3-pass rule
-
-1. **Learn pass (same day)** — give a new problem ~15–25 focused minutes. If you have no viable direction, use a hint/editorial. Then close it and implement from a blank editor.
-2. **Recall pass (+1 day)** — re-solve without notes. If you blank, write the pattern name and invariant first, then code.
-3. **Retention pass (+7 days)** — timed re-solve. The problem is considered learned only when you can explain *why this pattern applies* before writing code.
-
 ### Module gate
 
 Move to the next module when you can do both:
@@ -40,18 +32,6 @@ Ask in this order:
 ## What changed in v2
 
 This revision fixes the main sequencing bug in the original sheet: **a problem is now placed where its primary solving pattern is taught, not merely where its input type happens to fit.**
-
-Examples:
-
-- `Maximum Subarray` moved from fundamentals → **1D DP / Kadane**.
-- `Best Time to Buy and Sell Stock` moved from fundamentals → **Greedy / running optimum**.
-- `Move Zeroes`, `Remove Element`, `Remove Duplicates`, `Merge Sorted Array`, and `Rotate Array` moved → **Two Pointers**.
-- `Product of Array Except Self` moved → **Prefix/Suffix State**.
-- `Sliding Window Maximum` moved → **Queues/Deques**, because the decisive optimization is a monotonic deque.
-- `Spiral Matrix` and `Set Matrix Zeroes` moved → **Matrix Manipulation**.
-- `Min Cost to Connect All Points` moved → **Weighted Graphs / MST**.
-
-The first module is deliberately short. That is a feature. Beginners should not be ambushed by an algorithm that has not been introduced yet.
 
 ---
 
@@ -97,10 +77,6 @@ The first module is deliberately short. That is a feature. Beginners should not 
 
 **Goal:** Get comfortable with loops, indexing, basic mutation, and tiny amounts of running state. **No hidden named algorithm is required in this module.**
 
-**Recognition cue:** *Can I solve this directly with a loop, an index, a small accumulator, or straightforward mutation?*
-
-> **Gate:** If a solution suddenly requires Kadane, sliding window, a hashmap trick, greedy proof, or another named pattern, it does not belong here. Move on only when these direct-loop problems feel routine.
-
 - [x] **001. [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)** — `F`
 - [x] **002. [Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/)** — `F`
 - [x] **003. [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)** — `F`
@@ -143,7 +119,7 @@ The first module is deliberately short. That is a feature. Beginners should not 
 - [ ] **029. [Find the Difference](https://leetcode.com/problems/find-the-difference/)** — `T`
 - [ ] **030. [Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)** — `T`
 
-**Exit check:** pick a few problems from this module at random. Before coding each, state the invariant/pattern in one sentence. If you need a pattern that has not yet been taught, the curriculum is wrong—not you.
+**Exit check:** pick a few problems from this module at random. Before coding each, state the invariant/pattern in one sentence.
 
 ---
 
